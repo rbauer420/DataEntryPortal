@@ -1,9 +1,61 @@
-#Welcome to the Intervention Data Reporting Portal. Please enter your username and password to gain access and to submit your Intervention Reporting Form: Input username: jdoe
-#Input password: password
+
+
+print ("Welcome to the Intervention Data Reporting Portal. Please enter your password to gain access and to submit your Intervention Reporting Form:")
+ 
+password = input("Enter your password:  ")
+if password == "janeDoe":
+    print ("Access Granted")
+else:
+    print("Incorrect password. Access NOT granted")
+    pass
+
+
+# Initialize once the user enters correct user name
+askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")
+userName = askName
+
+def editForm():
+    #Allows user to edit form
+    formSection = input('\nWhich section would you like to change?'
+        '\n1. Demographics'
+        '\n2. Workplan Steps'
+        '\n2. Populations served'
+        '\n2. Successes and Barriers'
+        '\n3. None\n\t')
+    #if:
+    #elif:
+    #else:
 
 #(Add instructions for the user on how to navigate, submit and exit out of the application.)
+print(f'\nWelcome to the Data Entry Portal!, {userName}! '
+        'Please enter which step number that corresponds with what section would you like to enter data:')
+
+prompt =  '\n1. STEP 1 - Demographics'
+prompt +=  '\n2. STEP 2 - Workplan Steps'
+prompt +=  '\n3. STEP 3 - Population Served'
+prompt +=  '\n4. STEP 4 - Successes and Barriers'
+prompt +=  '\n5. EXIT - Exit the program\n\t'
 
 
+#Data Entry Portal Instructions and Table of Contents, this is an indefite loop that will repeat until the user exits the portal
+tableOfContents = True
+while tableOfContents == True:
+    message = input(prompt)
+
+    if message.upper() == 'STEP 1' or message == '1':
+        demographics()
+    elif message.upper() == 'STEP 2' or message == '2':
+        workPlan()
+    elif message.upper() == 'STEP 3' or message == '3':
+        popServed()
+    elif message.upper() == 'STEP 4' or message == '4':
+        successBarriers()
+    elif message.upper() == 'EXIT' or message == '5':
+        print('Thank you for using the Data Entry Portal. Have a great day!\n')
+        menu = False
+    else:
+        print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
+        
 #Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
 
 
@@ -62,10 +114,10 @@
 
 
 #Participant demographics
-print("What is your name?  ")
-name = input()
+#print("What is your name?  ")
+#name = input()
 
-print(f"Hello " + name + "how old are you?  ")
-age = input()
+#print(f"Hello " + name + "how old are you?  ")
+#age = input()
 
 
