@@ -57,6 +57,9 @@ while tableOfContents == True:
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
         
+#Add code for adding user inputs to DataEntryPortalReport.py
+
+
 #Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
 
 
