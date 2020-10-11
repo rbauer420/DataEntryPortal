@@ -1,4 +1,4 @@
-
+import sys
 
 print ("Welcome to the Intervention Data Reporting Portal. Please enter your password to gain access and to submit your Intervention Reporting Form:")
  
@@ -7,7 +7,7 @@ if password == "janeDoe":
     print ("Access Granted")
 else:
     print("Incorrect password. Access NOT granted")
-    pass
+    sys.exit() 
 
 
 # Initialize once the user enters correct user name
@@ -26,8 +26,8 @@ def editForm():
     #elif:
     #else:
 
-#(Add instructions for the user on how to navigate, submit and exit out of the application.)
-print(f'\nWelcome to the Data Entry Portal!, {userName}! '
+#(Instructions for the user on how to navigate, submit and exit out of the application.)
+print(f'\nWelcome to the Data Entry Portal, {userName}! '
         'Please enter which step number that corresponds with what section would you like to enter data:')
 
 prompt =  '\n1. STEP 1 - Demographics'
