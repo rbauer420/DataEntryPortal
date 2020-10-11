@@ -26,7 +26,7 @@ def editForm():
     #elif:
     #else:
 
-#(Instructions for the user on how to navigate, submit and exit out of the application.)
+#(Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.)
 print(f'\nWelcome to the Data Entry Portal, {userName}! '
         'Please enter which step number that corresponds with what section would you like to enter data:')
 
@@ -37,7 +37,7 @@ prompt +=  '\n4. STEP 4 - Successes and Barriers'
 prompt +=  '\n5. EXIT - Exit the program\n\t'
 
 
-#Data Entry Portal Instructions and Table of Contents, this is an indefite loop that will repeat until the user exits the portal
+#This class is an indefite loop that will repeat until the user exits the portal
 tableOfContents = True
 while tableOfContents == True:
     message = input(prompt)
@@ -53,6 +53,7 @@ while tableOfContents == True:
     elif message.upper() == 'EXIT' or message == '5':
         print('Thank you for using the Data Entry Portal. Have a great day!\n')
         menu = False
+        sys.exit() 
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
         
