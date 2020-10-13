@@ -43,7 +43,7 @@ while tableOfContents == True:
     message = input(prompt)
 
     if message.upper() == 'STEP 1' or message == '1':
-        demographics()
+        editForm.demos()
     elif message.upper() == 'STEP 2' or message == '2':
         workPlan()
     elif message.upper() == 'STEP 3' or message == '3':
@@ -56,11 +56,19 @@ while tableOfContents == True:
         sys.exit() 
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
-        
+
+
+#Adds data entered into program to DataEntryPortalReport.py
+#def report(self):
+    #file = open("DataEntryPortalReport.txt", "a")
+    #file.write(self+"\n")
+    #pass 
+
+#if __name__ == '__main__':
+    #report(input(userName))
+
+
 #Add code for adding user inputs to DataEntryPortalReport.py
-
-
-#Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
 
 
 #Python class implementation phase (name of interventio), "Please select which response option best describes your implementation progress for the {user inputed intervention name}:" > Q6
