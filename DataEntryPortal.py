@@ -67,19 +67,46 @@ while tableOfContents == True:
 #if __name__ == '__main__':
     #report(input(userName))
 
+    #Add code for adding user inputs to DataEntryPortalReport.py
 
-#Add code for adding user inputs to DataEntryPortalReport.py
+#Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
+class demographics:
+    dateSubmitted = input("Please enter today's date:  ")
+    agencyName = input("Please enter the name of your agency:  ")
+    pointOfContact = input("Please enter your agencies point of contact:  ")
+    countyServed = input("Please enter the county served:  ")
+    interventionName = input("Please enter the name of the intervention implemented:  ")
+    
+    
+    #demoTable = PrettyTable(["dateSubmitted",
+    #                        "agencyName", 
+    #                         "pointOfContact", 
+    #                         "countyServed", 
+    #                         "interventionName"])
+    #demoTable.add_column("Date:")
+    #demoTable.add_column("Name of Agency")
+    #demoTable.add_column("Point of Contact")
+    #demoTable.add_column("County Served")
+    #demoTable.add_column("Name of Intervention")
+
+    #print(demoTable)
 
 
-#Python class implementation phase (name of interventio), "Please select which response option best describes your implementation progress for the {user inputed intervention name}:" > Q6
-    #A.	No activities B. Yes implementation/maintenance activities or C. Planning only 
+#Python class workPlan, overall implementation progress
+
+print(f"\nPlease select which response option best describes your implementation progress for the intervention, {interventionName}:  ")
+
+prompt =  '\nA. - No activities'
+prompt +=  '\nB. - Planning activities only.'
+prompt +=  '\nC. - Implementation/maintenance activities'
+    
     #if "no activities":
         #skip to class successes_barriers
     #else: 
         #continue with reporting (question 7) 
 
 
-# Python class workplan_steps: "Please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
+# Python class workPlan: "Please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
     #7.	Identified a target audience: y/n
     #8.	Obtained intervention materials: y/n
     #9.	Implement the intervention with fidelity: y/n
@@ -88,7 +115,7 @@ while tableOfContents == True:
 
             #(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
 
-            #If steps == 5, or if steps < 5, skip to class successes_barriers
+            #If steps == 5, or if steps < 5, skip to class successes_barriers 
 
 
 #Python class populations_served: "Please enter the total number for each population served by each demographic category:
