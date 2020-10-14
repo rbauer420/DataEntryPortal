@@ -159,9 +159,11 @@ haveSharedData = shareData
 
 
 #Python class successes_barriers: 
-    #15.	Please describe what successes you have experienced in {user input county name} county in the past six months? (O/E)
+successes = input(f"15. Please describe what successes you have experienced in {countyEntered} county in the past six months?: " " ")
+successesEntered = successes
 
-    #16.	Please describe what barriers you have experienced in {user input county name} county in the past six months? (O/E)
+barriers = input(f"16. Please describe what barriers you have experienced in {countyEntered} county in the past six months?: " " ")
+barriersEntered = barriers
 
 
 
