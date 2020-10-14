@@ -115,11 +115,23 @@ implementationProgressEntered = implementationProgress
 
 
 # Python class workPlan: "Please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
-    #7.	Identified a target audience: y/n
-    #8.	Obtained intervention materials: y/n
-    #9.	Implement the intervention with fidelity: y/n
-    #10.	Collected pre- and post-test data: y/n
-    #11.	Shared the results with stakeholders: y/n
+
+print("Please type “y” to report you have completed this step and “n” if you have not completed this workplan step.")
+
+targetPop = input("7. Identified a target audience: " " ")
+targetPopId = targetPop
+
+intvMaterials = input("8. Obtained intervention materials: " " ")
+haveIntvMaterials = intvMaterials
+
+fidelity = input("9. Implemented the intervention with fidelity: " " ")
+impFidelity = fidelity
+
+prePostData = input("10. Collected pre- and post-test data: " " ")
+collectedPrePost = prePostData
+
+shareData = input("11. Shared the results with stakeholders: " " ")
+haveSharedData = shareData
 
             #(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
 
