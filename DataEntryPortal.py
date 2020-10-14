@@ -169,8 +169,8 @@ barriersEntered = barriers
 
 #Python class report:Once user reaches this point, the application will display all of the data entered by the user in  a summary report, including graphs. 
         
-        # Then the message will display, 
-            # “Thank you {user input POC name} for submitting your form!”
+    # Then the message will display, 
+print(f"Thank you {userName} for submitting your form!")   
 
 
 
