@@ -71,19 +71,19 @@ while tableOfContents == True:
 
 #Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
 #class demographics:
-dateSubmitted = input("Please enter today's date: " "  ")
+dateSubmitted = input("1. Please enter today's date: " "  ")
 dateEntered = dateSubmitted
 
-agencyName = input("Please enter the name of your agency: " "  ")
+agencyName = input("2. Please enter the name of your agency: " "  ")
 agencyEntered = agencyName
 
-pointOfContact = input("Please enter your agencies point of contact: " "  ")
+pointOfContact = input("3. Please enter your agencies point of contact: " "  ")
 pointOfContactEntered = pointOfContact
 
-countyServed = input("Please enter the county served: " "  ")
+countyServed = input("4. Please enter the county served: " "  ")
 countyEntered = countyServed
 
-interventionName = input("Please enter the name of the intervention implemented: " "  ")
+interventionName = input("5. Please enter the name of the intervention implemented: " "  ")
 interventionEntered = interventionName
     
     
@@ -103,11 +103,10 @@ interventionEntered = interventionName
 
 #Python class workPlan, overall implementation progress
 
-print(f'\nPlease select which response option best describes your implementation progress for the intervention, {interventionEntered}: ')
-#implementationProgress = input([]
-#prompt =  '\nA. - No activities'
-#prompt +=  '\nB. - Planning activities only.'
-#prompt +=  '\nC. - Implementation/maintenance activities' 
+implementationProgress = input(f'6. Please select which response option best describes your implementation progress for the intervention, {interventionEntered} '
+                              '\nA. No activities B. Planning activities only. C. Implementation/maintenance activities:  ')
+
+implementationProgressEntered = implementationProgress
     
     #if "no activities":
         #skip to class successes_barriers
@@ -161,11 +160,6 @@ print(f'\nPlease select which response option best describes your implementation
 
 
 
-#Participant demographics
-#print("What is your name?  ")
-#name = input()
 
-#print(f"Hello " + name + "how old are you?  ")
-#age = input()
 
 
