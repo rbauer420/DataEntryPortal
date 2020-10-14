@@ -70,12 +70,21 @@ while tableOfContents == True:
     #Add code for adding user inputs to DataEntryPortalReport.py
 
 #Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
-class demographics:
-    dateSubmitted = input("Please enter today's date:  ")
-    agencyName = input("Please enter the name of your agency:  ")
-    pointOfContact = input("Please enter your agencies point of contact:  ")
-    countyServed = input("Please enter the county served:  ")
-    interventionName = input("Please enter the name of the intervention implemented:  ")
+#class demographics:
+dateSubmitted = input("Please enter today's date: " "  ")
+dateEntered = dateSubmitted
+
+agencyName = input("Please enter the name of your agency: " "  ")
+agencyEntered = agencyName
+
+pointOfContact = input("Please enter your agencies point of contact: " "  ")
+pointOfContactEntered = pointOfContact
+
+countyServed = input("Please enter the county served: " "  ")
+countyEntered = countyServed
+
+interventionName = input("Please enter the name of the intervention implemented: " "  ")
+interventionEntered = interventionName
     
     
     #demoTable = PrettyTable(["dateSubmitted",
@@ -94,11 +103,11 @@ class demographics:
 
 #Python class workPlan, overall implementation progress
 
-print(f"\nPlease select which response option best describes your implementation progress for the intervention, {interventionName}:  ")
-
-prompt =  '\nA. - No activities'
-prompt +=  '\nB. - Planning activities only.'
-prompt +=  '\nC. - Implementation/maintenance activities'
+print(f'\nPlease select which response option best describes your implementation progress for the intervention, {interventionEntered}: ')
+#implementationProgress = input([]
+#prompt =  '\nA. - No activities'
+#prompt +=  '\nB. - Planning activities only.'
+#prompt +=  '\nC. - Implementation/maintenance activities' 
     
     #if "no activities":
         #skip to class successes_barriers
