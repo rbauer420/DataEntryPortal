@@ -14,8 +14,8 @@ else:
 askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")
 userName = askName
 
+#Allows user to edit form
 def editForm():
-    #Allows user to edit form
     formSection = input('\nWhich section would you like to change?'
         '\n1. Demographics'
         '\n2. Workplan Steps'
@@ -23,7 +23,7 @@ def editForm():
         '\n4. Successes and Barriers'
         '\n5. I do not wish to edit my data\n\t')
     if message.lower() == '1' or message == 'demographics':
-        demographics(self) 
+        demographics() 
     elif message.upper() == '2' or message == 'workplan steps':
         workPlan()
     elif message.upper() == '3' or message == 'populations served':
@@ -33,7 +33,7 @@ def editForm():
     else:
         pass
 
-#(Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.)
+#Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
 print(f'\nWelcome to the Data Entry Portal, {userName}! '
         'Please enter which step number that corresponds with what section would you like to enter data:')
 
@@ -76,9 +76,8 @@ while tableOfContents == True:
 
     #Add code for adding user inputs to DataEntryPortalReport.py
 
-#Python class demographics: date, agency, POC, county served, intervention name => Q1 - 5
-#class demographics:
 
+#Python class demographics: date, agency, POC, county served, intervention name
 class demographics:
     def __init__(self, dateEntered, agencyEntered, pointOfContactEntered, countyEntered, interventionEntered):
         self.dateEntered = dateEntered
@@ -87,22 +86,21 @@ class demographics:
         self.countyEntered = countyEntered
         self.interventionEntered = interventionEntered
 
-dateSubmitted = input("1. Please enter today's date: " "  ")
-dateEntered = dateSubmitted
+    @classmethod
+    def from_input(cls):
+        return cls(
+            dateEntered = input("1. Please enter today's date: " "  "),
 
-agencyName = input("2. Please enter the name of your agency: " "  ")
-agencyEntered = agencyName
+            agencyEntered = input("2. Please enter the name of your agency: " "  "),
 
-pointOfContact = input("3. Please enter your agencies point of contact: " "  ")
-pointOfContactEntered = pointOfContact
+            pointOfContactEntered = input("3. Please enter your agencies point of contact: " "  "),
 
-countyServed = input("4. Please enter the county served: " "  ")
-countyEntered = countyServed
+            countyEntered = input("4. Please enter the county served: " "  "),
 
-interventionName = input("5. Please enter the name of the intervention implemented: " "  ")
-interventionEntered = interventionName
-    
-    
+            interventionEntered  = input("5. Please enter the name of the intervention implemented: " "  "),
+        )
+    var = demographics.from_input()
+
     #demoTable = PrettyTable(["dateSubmitted",
     #                        "agencyName", 
     #                         "pointOfContact", 
@@ -118,9 +116,8 @@ interventionEntered = interventionName
 
 
 #Python class workPlan, overall implementation progress
-
 class workPlan:
-    def __init__(self, implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost,haveSharedData):
+    def __init__(self, implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost, haveSharedData):
         self.implementationProgressEntered = implementationProgressEntered 
         self.targetPopId = targetPopId 
         self.haveIntvMaterials = haveIntvMaterials 
@@ -128,39 +125,35 @@ class workPlan:
         self.collectedPrePost = collectedPrePost 
         self.haveSharedData = haveSharedData
 
-    implementationProgress = input(f'6. Please select which response option best describes your implementation progress for the intervention, {interventionEntered} '
-                              '\nA. No activities B. Planning activities only. C. Implementation/maintenance activities:  ')
+    @classmethod
+    def from_input(cls):
+        return cls(
+            implementationProgressEntered = input(f'6. Please select which response option best describes your implementation progress for the intervention, {interventionEntered} '
+                              '\nA. No activities B. Planning activities only. C. Implementation/maintenance activities:  '),
 
-    implementationProgressEntered = implementationProgress
+            targetPopId = input("For the next five questions, please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
+                "\n7. Identified a target audience: " " "),
+
+            haveIntvMaterials = input("8. Obtained intervention materials: " " "),
+
+            impFidelity = input("9. Implemented the intervention with fidelity: " " "),
+
+            collectedPrePost  = input("10. Collected pre- and post-test data: " " "),
+
+            haveSharedData  = input("11. Shared the results with stakeholders: " " "),
+        )
+
+    var = workPlan.from_input()
+
     
     #if "no activities":
         #skip to class successes_barriers
     #else: 
         #continue with reporting (question 7) 
 
+#(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
 
-# Python class workPlan: "Please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
-
-print("Please type “y” to report you have completed this step and “n” if you have not completed this workplan step.")
-
-targetPop = input("7. Identified a target audience: " " ")
-targetPopId = targetPop
-
-intvMaterials = input("8. Obtained intervention materials: " " ")
-haveIntvMaterials = intvMaterials
-
-fidelity = input("9. Implemented the intervention with fidelity: " " ")
-impFidelity = fidelity
-
-prePostData = input("10. Collected pre- and post-test data: " " ")
-collectedPrePost = prePostData
-
-shareData = input("11. Shared the results with stakeholders: " " ")
-haveSharedData = shareData
-
-            #(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
-
-            #If steps == 5, or if steps < 5, skip to class successes_barriers 
+#If steps == 5, or if steps < 5, skip to class successes_barriers 
 
 
 #Python class populationServed: "Please enter the total number for each population served by each demographics category:
@@ -191,18 +184,29 @@ class successBarriers:
     def __init__(self, successesEntered, barriersEntered):
         self.successesEntered = successesEntered
         self.barriersEntered = barriersEntered
+    
+    @classmethod
+    def from_input(cls):
+        return cls(
+            successesEntered = input(f"15. Please describe what successes you have experienced in {countyEntered} county in the past six months?: " " "),
 
-successes = input(f"15. Please describe what successes you have experienced in {countyEntered} county in the past six months?: " " ")
-successesEntered = successes
-
-barriers = input(f"16. Please describe what barriers you have experienced in {countyEntered} county in the past six months?: " " ")
-barriersEntered = barriers
-
-
+            barriersEntered = input(f"16. Please describe what barriers you have experienced in {countyEntered} county in the past six months?: " " "),
+        )
+    var = successBarriers.from_input()
+    
 
 #Python class report:Once user reaches this point, the application will display all of the data entered by the user in  a summary report, including graphs. 
-        
-# Then the message will display, 
+def createTestReport(testReport):
+    userInputs = (demographics, workPlan, successBarriers)
+    headers = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
+    with open('testReport.csv', 'w', newline='') as csvfile:
+        filewriter = csv.writer(csvfile)
+        filewriter.writerow(headers)
+        for _r_ in userInputs:
+            filewriter.writerow(_r_)
+
+
+#Then the message will display, 
 print(f"Thank you {userName} for submitting your form!")   
 
 
