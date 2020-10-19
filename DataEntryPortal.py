@@ -14,6 +14,61 @@ else:
 askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")
 userName = askName
 
+
+#Classes
+class demographics:
+    def __init__(self, dateEntered, agencyEntered, pointOfContactEntered, countyEntered, interventionEntered):
+        self.dateEntered = dateEntered
+        self.agencyEntered = agencyEntered
+        self.pointOfContactEntered = pointOfContactEntered
+        self.countyEntered = countyEntered
+        self.interventionEntered = interventionEntered
+    
+    @classmethod
+    def from_input(cls):
+        return cls(
+            dateEntered = input("1. Please enter today's date: " "  "),
+            agencyEntered = input("2. Please enter the name of your agency: " "  "),
+            pointOfContactEntered = input("3. Please enter your agencies point of contact: " "  "),
+            countyEntered = input("4. Please enter the county served: " "  "),
+            interventionEntered  = input("5. Please enter the name of the intervention implemented: " "  "),
+        )
+
+class workPlan:
+    def __init__(self, implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost, haveSharedData):
+        self.implementationProgressEntered = implementationProgressEntered 
+        self.targetPopId = targetPopId 
+        self.haveIntvMaterials = haveIntvMaterials 
+        self.impFidelity = impFidelity 
+        self.collectedPrePost = collectedPrePost 
+        self.haveSharedData = haveSharedData
+
+    @classmethod
+    def from_input(cls):
+        return cls(
+            implementationProgressEntered = input(f'6. Please select which response option best describes your implementation progress for the intervention, {interventionEntered} '
+                                                  '\nA. No activities B. Planning activities only. C. Implementation/maintenance activities:  '),
+            targetPopId = input("For the next five questions, please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
+                                "\n7. Identified a target audience: " " "),
+            haveIntvMaterials = input("8. Obtained intervention materials: " " "),
+            impFidelity = input("9. Implemented the intervention with fidelity: " " "),
+            collectedPrePost  = input("10. Collected pre- and post-test data: " " "),
+            haveSharedData  = input("11. Shared the results with stakeholders: " " "),
+        )
+
+class successBarriers:
+    def __init__(self, successesEntered, barriersEntered):
+        self.successesEntered = successesEntered
+        self.barriersEntered = barriersEntered
+
+    @classmethod
+    def from_input(cls):
+        return cls(
+            successesEntered = input(f"15. Please describe what successes you have experienced in {countyEntered} county in the past six months?: " " "),
+            barriersEntered = input(f"16. Please describe what barriers you have experienced in {countyEntered} county in the past six months?: " " "),
+        )
+
+
 #Allows user to edit form
 def editForm():
     formSection = input('\nWhich section would you like to change?'
@@ -23,15 +78,16 @@ def editForm():
         '\n4. Successes and Barriers'
         '\n5. I do not wish to edit my data\n\t')
     if message.lower() == '1' or message == 'demographics':
-        demographics() 
+        demographics(demographics.from_input()) 
     elif message.upper() == '2' or message == 'workplan steps':
-        workPlan()
+        workPlan(workPlan.from_input())
     elif message.upper() == '3' or message == 'populations served':
-        popServed()
+        popServed(self)
     elif message.upper() == '4' or message == 'successes and barriers':
-        successBarriers()
+        successBarriers(successBarriers.from_input())
     else:
         pass
+
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
 print(f'\nWelcome to the Data Entry Portal, {userName}! '
@@ -78,28 +134,7 @@ while tableOfContents == True:
 
 
 #Python class demographics: date, agency, POC, county served, intervention name
-class demographics:
-    def __init__(self, dateEntered, agencyEntered, pointOfContactEntered, countyEntered, interventionEntered):
-        self.dateEntered = dateEntered
-        self.agencyEntered = agencyEntered
-        self.pointOfContactEntered = pointOfContactEntered
-        self.countyEntered = countyEntered
-        self.interventionEntered = interventionEntered
 
-    @classmethod
-    def from_input(cls):
-        return cls(
-            dateEntered = input("1. Please enter today's date: " "  "),
-
-            agencyEntered = input("2. Please enter the name of your agency: " "  "),
-
-            pointOfContactEntered = input("3. Please enter your agencies point of contact: " "  "),
-
-            countyEntered = input("4. Please enter the county served: " "  "),
-
-            interventionEntered  = input("5. Please enter the name of the intervention implemented: " "  "),
-        )
-    var = demographics.from_input()
 
     #demoTable = PrettyTable(["dateSubmitted",
     #                        "agencyName", 
@@ -116,34 +151,7 @@ class demographics:
 
 
 #Python class workPlan, overall implementation progress
-class workPlan:
-    def __init__(self, implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost, haveSharedData):
-        self.implementationProgressEntered = implementationProgressEntered 
-        self.targetPopId = targetPopId 
-        self.haveIntvMaterials = haveIntvMaterials 
-        self.impFidelity = impFidelity 
-        self.collectedPrePost = collectedPrePost 
-        self.haveSharedData = haveSharedData
 
-    @classmethod
-    def from_input(cls):
-        return cls(
-            implementationProgressEntered = input(f'6. Please select which response option best describes your implementation progress for the intervention, {interventionEntered} '
-                              '\nA. No activities B. Planning activities only. C. Implementation/maintenance activities:  '),
-
-            targetPopId = input("For the next five questions, please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
-                "\n7. Identified a target audience: " " "),
-
-            haveIntvMaterials = input("8. Obtained intervention materials: " " "),
-
-            impFidelity = input("9. Implemented the intervention with fidelity: " " "),
-
-            collectedPrePost  = input("10. Collected pre- and post-test data: " " "),
-
-            haveSharedData  = input("11. Shared the results with stakeholders: " " "),
-        )
-
-    var = workPlan.from_input()
 
     
     #if "no activities":
@@ -177,22 +185,6 @@ class popServed:
         #D.	Veterans: ___
 
             #(Once user enters data, the program will display the entered data as a bar graph)
-
-
-#Python class successBarriers: 
-class successBarriers:
-    def __init__(self, successesEntered, barriersEntered):
-        self.successesEntered = successesEntered
-        self.barriersEntered = barriersEntered
-    
-    @classmethod
-    def from_input(cls):
-        return cls(
-            successesEntered = input(f"15. Please describe what successes you have experienced in {countyEntered} county in the past six months?: " " "),
-
-            barriersEntered = input(f"16. Please describe what barriers you have experienced in {countyEntered} county in the past six months?: " " "),
-        )
-    var = successBarriers.from_input()
     
 
 #Python class report:Once user reaches this point, the application will display all of the data entered by the user in  a summary report, including graphs. 
@@ -208,9 +200,3 @@ def createTestReport(testReport):
 
 #Then the message will display, 
 print(f"Thank you {userName} for submitting your form!")   
-
-
-
-
-
-
