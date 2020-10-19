@@ -1,5 +1,7 @@
 import sys
 
+
+#Welcome to the program and password verification 
 print ("Welcome to the Intervention Data Reporting Portal. Please enter your password to gain access and to submit your Intervention Reporting Form:")
  
 password = input("Enter your password:  ")
@@ -14,17 +16,16 @@ else:
 askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")
 userName = askName
 
+
 #Global variables 
 def globalUserName():
     global userName
     userName = askName
 
-#countyEntered = countyEntered
 def globalCountyEntered():
     global countyEntered
     globalCountyEntered = globalCountyEntered
 
-#interventionEntered = interventionEntered
 def globalInterventionEntered():
     global interventionEntered
     globalInterventionEntered = globalInterventionEntered
@@ -85,14 +86,15 @@ class successBarriers:
 
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
-print(f'\nWelcome to the Data Entry Portal, {userName}! '
-        'Please enter which step number that corresponds with what section would you like to enter data:')
+print(f'\nWelcome to the Data Entry Portal, {userName}! ')
 
-prompt =  '\n1. STEP 1 - Demographics'
+prompt =  'Please enter which step number that corresponds with what section would you like to enter data:'
+prompt +=  '\n1. STEP 1 - Demographics'
 prompt +=  '\n2. STEP 2 - Workplan Steps'
 prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
-prompt +=  '\n5. EXIT - Exit the program\n\t'
+prompt +=  '\n5. STEP 5 - Submit Form'
+prompt +=  '\n6. EXIT - Exit the program\n\t'
 
 
 #This class is an indefite loop that will repeat until the user exits the portal
@@ -108,30 +110,19 @@ while tableOfContents == True:
         var = popServed(self)
     elif message.upper() == 'STEP 4' or message == '4':
         var = successBarriers.from_input()
-    elif message.upper() == 'EXIT' or message == '5':
-        print('Thank you for using the Data Entry Portal. Have a great day!\n')
+    elif message.upper() == 'STEP 5' or message == '5':
+        print(f'Thank you {globalUserName} for submitting your form! Have a great day!\n')
+        menu = False
+        sys.exit() 
+    elif message.upper() == 'EXIT' or message == '6':
+        print(f'Thank you {globalUserName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
 
 
-#Adds data entered into program to DataEntryPortalReport.py
-#def report(self):
-    #file = open("DataEntryPortalReport.txt", "a")
-    #file.write(self+"\n")
-    #pass 
-
-#if __name__ == '__main__':
-    #report(input(userName))
-
-    #Add code for adding user inputs to DataEntryPortalReport.py
-
-
-#Python class demographics: date, agency, POC, county served, intervention name
-
-
-    #demoTable = PrettyTable(["dateSubmitted",
+#demoTable = PrettyTable(["dateSubmitted",
     #                        "agencyName", 
     #                         "pointOfContact", 
     #                         "countyServed", 
@@ -146,17 +137,15 @@ while tableOfContents == True:
 
 
 #Python class workPlan, overall implementation progress
-
-
-    
+#Overall implementation progress 
     #if "no activities":
         #skip to class successes_barriers
     #else: 
         #continue with reporting (question 7) 
 
-#(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
-
-#If steps == 5, or if steps < 5, skip to class successes_barriers 
+#Workplan steps
+    #(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
+        #If steps == 5, or if steps < 5, skip to class successes_barriers 
 
 
 #Python class populationServed: "Please enter the total number for each population served by each demographics category:
@@ -191,7 +180,4 @@ def createTestReport(testReport):
         filewriter.writerow(headers)
         for _r_ in userInputs:
             filewriter.writerow(_r_)
-
-
-#Then the message will display, 
-print(f"Thank you {userName} for submitting your form!")   
+ 
