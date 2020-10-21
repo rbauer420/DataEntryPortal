@@ -1,5 +1,5 @@
 import sys
-
+import csv
 
 #Welcome to the program and password verification 
 print ("Welcome to the Intervention Data Reporting Portal. Please enter your password to gain access and to submit your Intervention Reporting Form:")
@@ -17,11 +17,30 @@ askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")
 userName = askName
 
 
-#Global variables 
-def globalUserName():
-    global userName
-    userName = askName
+#CSV file
+#def draftReport ():
+ #   with open('testReport2.csv', 'w') as csv_file:
+  #      fieldnames = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
+   #     csv_writer = csv.writer(csv_file, fieldnames=fieldnames, delimiter='\t')
+    #    csv_writer.writeheader()
+     #   for line in csv_writer.writerow(dateEntered, agencyEntered, pointOfContactEntered, globalCountyEntered, globalInterventionEntered,):
+      #      csv_writer.writerow(line)
 
+       # print(f'Thank you {userName} for submitting your form! Have a great day!\n')
+        #sys.exit() 
+
+
+
+#def createTestReport(testReport):
+    #userInputs = (demographics, workPlan, successBarriers)
+    #headers = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
+    #with open('testReport.csv', 'w', newline='') as csvfile:
+     #   filewriter = csv.writer(csvfile)
+      #  filewriter.writerow(headers)
+       # for _r_ in userInputs:
+        #    filewriter.writerow(_r_)
+
+#Global variables: FIX OUTPUT!!!!!
 def globalCountyEntered():
     global countyEntered
     globalCountyEntered = globalCountyEntered
@@ -80,9 +99,52 @@ class successBarriers:
     @classmethod
     def from_input(cls):
         return cls(
-            successesEntered = input(f"15. Please describe what successes you have experienced in {globalInterventionEntered} county in the past six months?: " " "),
-            barriersEntered = input(f"16. Please describe what barriers you have experienced in {globalInterventionEntered} county in the past six months?: " " "),
+            successesEntered = input(f'15. Please describe what successes you have experienced in {globalCountyEntered} county in the past six months?: ' ' '),
+            barriersEntered = input(f'16. Please describe what barriers you have experienced in {globalCountyEntered} county in the past six months?: ' ' '),
         )
+
+#Allows user to review form
+def reviewForm():
+    print("Date +  :  + {self.dateEntered}")
+    print("Agency +  :  + {self.agencyEntered}")
+    print("Point of Contact +  :  + {self.pointOfContactEntered}")
+    print("County Served +  :  + {self.globalCountyEntered}")
+    print("Intervention +  :  + {self.globalInterventionEntered}")
+    print("Overall Implementation Progress +  :  + {self.implementationProgressEntered}")
+    print("Workplan Step 1 Completed +  :  + {self.targetPopId}")
+    print("Workplan Step 2 Completed +  :  + {self.haveIntvMaterials}")
+    print("Workplan Step 3 Completed +  :  + {self.impFidelity}")
+    print("Workplan Step 4 Completed +  :  + {self.collectedPrePost}")
+    print("Workplan Step 5 Completed +  :  + {self.haveSharedData}")
+    print("Successes +  :  + {self.successesEntered}")
+    print("Challenges +  :  + {self.barriersEntered}")
+
+
+    #print(input(f'Data entered:{dateEntered}, {agencyEntered}, {pointOfContactEntered}, {globalCountyEntered}, {globalInterventionEntered}, {implementationProgressEntered}, {targetPopId}, {haveIntvMaterials}, {impFidelity}, {collectedPrePost}, {haveSharedData}, {successesEntered}, {barriersEntered}'))
+
+                       #print({demographics}(dateEntered, agencyEntered, pointOfContactEntered, globalCountyEntered, globalInterventionEntered), 
+                       #workPlan(implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost, haveSharedData), 
+                       #successBarriers(successesEntered, barriersEntered))
+
+
+#Allows user to edit form
+def editForm():
+    formSection = input('\nWhich section would you like to change?'
+        '\n1. Demographics'
+        '\n2. Workplan Steps'
+        '\n3. Populations Served'
+        '\n4. Successes and Barriers'
+        '\n5. I do not wish to edit my data\n\t')
+    if message.lower() == '1' or message == 'demographics':
+        var = demographics.from_input(), workPlan.from_input(), successBarriers.from_input()
+    elif message.upper() == '2' or message == 'workplan steps':
+        var = workPlan.from_input(), successBarriers.from_input()
+    elif message.upper() == '3' or message == 'populations served':
+        var = popServed()
+    elif message.upper() == '4' or message == 'successes and barriers':
+        successBarriers.from_input()
+    else:
+        pass 
 
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
@@ -93,8 +155,10 @@ prompt +=  '\n1. STEP 1 - Demographics'
 prompt +=  '\n2. STEP 2 - Workplan Steps'
 prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
-prompt +=  '\n5. STEP 5 - Submit Form'
-prompt +=  '\n6. EXIT - Exit the program\n\t'
+prompt +=  '\n5. REVIEW - Review Data Entered'
+prompt +=  '\n6. EDIT - Edit Data Entered'
+prompt +=  '\n7. EXPORT - Export Form to CSV File'
+prompt +=  '\n8. EXIT - Exit the program\n\t'
 
 
 #This class is an indefite loop that will repeat until the user exits the portal
@@ -110,42 +174,18 @@ while tableOfContents == True:
         var = popServed(self)
     elif message.upper() == 'STEP 4' or message == '4':
         var = successBarriers.from_input()
-    elif message.upper() == 'STEP 5' or message == '5':
-        print(f'Thank you {globalUserName} for submitting your form! Have a great day!\n')
-        menu = False
-        sys.exit() 
-    elif message.upper() == 'EXIT' or message == '6':
+    elif message.upper() == 'REVIEW' or message == '5':
+        reviewForm()
+    elif message.upper() == 'EDIT' or message == '6':
+        editForm()
+    elif message.upper() == 'EXPORT' or message == '7':
+        var = draftReport(self)
+    elif message.upper() == 'EXIT' or message == '8':
         print(f'Thank you {globalUserName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
-
-
-#demoTable = PrettyTable(["dateSubmitted",
-    #                        "agencyName", 
-    #                         "pointOfContact", 
-    #                         "countyServed", 
-    #                         "interventionName"])
-    #demoTable.add_column("Date:")
-    #demoTable.add_column("Name of Agency")
-    #demoTable.add_column("Point of Contact")
-    #demoTable.add_column("County Served")
-    #demoTable.add_column("Name of Intervention")
-
-    #print(demoTable)
-
-
-#Python class workPlan, overall implementation progress
-#Overall implementation progress 
-    #if "no activities":
-        #skip to class successes_barriers
-    #else: 
-        #continue with reporting (question 7) 
-
-#Workplan steps
-    #(Display in a pie graph the total number of activity steps completed (yeses) out of total number of intervention steps)
-        #If steps == 5, or if steps < 5, skip to class successes_barriers 
 
 
 #Python class populationServed: "Please enter the total number for each population served by each demographics category:
@@ -166,18 +206,25 @@ class popServed:
         #A.	Individuals living in rural areas: ___
         #B.	Persons with low SES: ___
         #C.	Students 
-        #D.	Veterans: ___
+        #D.	Veterans: ___  
 
-            #(Once user enters data, the program will display the entered data as a bar graph)
-    
+#Python class Export:Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
 
-#Python class report:Once user reaches this point, the application will display all of the data entered by the user in  a summary report, including graphs. 
-def createTestReport(testReport):
-    userInputs = (demographics, workPlan, successBarriers)
-    headers = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
-    with open('testReport.csv', 'w', newline='') as csvfile:
-        filewriter = csv.writer(csvfile)
-        filewriter.writerow(headers)
-        for _r_ in userInputs:
-            filewriter.writerow(_r_)
+#Use pickle to display data CSV file graphically. 
+
  
+
+
+ #Back burner:
+        #demoTable = PrettyTable(["dateSubmitted",
+            #                        "agencyName", 
+            #                         "pointOfContact", 
+            #                         "countyServed", 
+            #                         "interventionName"])
+            #demoTable.add_column("Date:")
+            #demoTable.add_column("Name of Agency")
+            #demoTable.add_column("Point of Contact")
+            #demoTable.add_column("County Served")
+            #demoTable.add_column("Name of Intervention")
+
+            #print(demoTable)
