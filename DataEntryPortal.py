@@ -69,6 +69,11 @@ class demographics:
             globalInterventionEntered  = input("5. Please enter the name of the intervention implemented: " "  "),
         )
 
+def varStep1():
+    varStep1 = demographics
+    return(varStep1)
+
+
 class workPlan:
     def __init__(self, implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost, haveSharedData):
         self.implementationProgressEntered = implementationProgressEntered 
@@ -91,6 +96,11 @@ class workPlan:
             haveSharedData  = input("11. Shared the results with stakeholders: " " "),
         )
 
+def varStep2():
+    varStep2 = workPlan
+    return(varStep2)
+
+
 class successBarriers:
     def __init__(self, successesEntered, barriersEntered):
         self.successesEntered = successesEntered
@@ -103,21 +113,29 @@ class successBarriers:
             barriersEntered = input(f'16. Please describe what barriers you have experienced in {globalCountyEntered} county in the past six months?: ' ' '),
         )
 
+def varStep4():
+    varStep4 = successBarriers
+    return(varStep4)
+
+
+#Class Attributes 
+
+
 #Allows user to review form
 def reviewForm():
-    print("Date +  :  + {self.dateEntered}")
-    print("Agency +  :  + {self.agencyEntered}")
-    print("Point of Contact +  :  + {self.pointOfContactEntered}")
-    print("County Served +  :  + {self.globalCountyEntered}")
-    print("Intervention +  :  + {self.globalInterventionEntered}")
-    print("Overall Implementation Progress +  :  + {self.implementationProgressEntered}")
-    print("Workplan Step 1 Completed +  :  + {self.targetPopId}")
-    print("Workplan Step 2 Completed +  :  + {self.haveIntvMaterials}")
-    print("Workplan Step 3 Completed +  :  + {self.impFidelity}")
-    print("Workplan Step 4 Completed +  :  + {self.collectedPrePost}")
-    print("Workplan Step 5 Completed +  :  + {self.haveSharedData}")
-    print("Successes +  :  + {self.successesEntered}")
-    print("Challenges +  :  + {self.barriersEntered}")
+    print(f"Date: {varStep1.dateEntered}")
+    print(f"Agency: {varStep1.agencyEntered}")
+    print(f"Point of Contact: {varStep1.pointOfContactEntered}")
+    print(f"County Served: {varStep1.globalCountyEntered}")
+    print(f"Intervention: {varStep1.globalInterventionEntered()}")
+    print(f"Overall Implementation Progress: {varStep2.implementationProgressEntered}")
+    print(f"Workplan Step 1 Completed: {varStep2.targetPopId}")
+    print(f"Workplan Step 2 Completed: {varStep2.haveIntvMaterials}")
+    print(f"Workplan Step 3 Completed: {varStep2.impFidelity}")
+    print(f"Workplan Step 4 Completed: {varStep2.collectedPrePost}")
+    print(f"Workplan Step 5 Completed: {varStep2.haveSharedData}")
+    print(f"Successes: {varStep4.successesEntered}")
+    print(f"Challenges: {varStep4.barriersEntered}")
 
 
     #print(input(f'Data entered:{dateEntered}, {agencyEntered}, {pointOfContactEntered}, {globalCountyEntered}, {globalInterventionEntered}, {implementationProgressEntered}, {targetPopId}, {haveIntvMaterials}, {impFidelity}, {collectedPrePost}, {haveSharedData}, {successesEntered}, {barriersEntered}'))
@@ -136,13 +154,13 @@ def editForm():
         '\n4. Successes and Barriers'
         '\n5. I do not wish to edit my data\n\t')
     if message.lower() == '1' or message == 'demographics':
-        var = demographics.from_input(), workPlan.from_input(), successBarriers.from_input()
+        varStep1 = demographics.from_input()
     elif message.upper() == '2' or message == 'workplan steps':
-        var = workPlan.from_input(), successBarriers.from_input()
+        varStep2 = workPlan.from_input()
     elif message.upper() == '3' or message == 'populations served':
-        var = popServed()
+        varStep3 = popServed()
     elif message.upper() == '4' or message == 'successes and barriers':
-        successBarriers.from_input()
+        varStep4 = successBarriers.from_input()
     else:
         pass 
 
@@ -167,13 +185,13 @@ while tableOfContents == True:
     message = input(prompt)
 
     if message.upper() == 'STEP 1' or message == '1':
-        var = demographics.from_input(), workPlan.from_input(), successBarriers.from_input()
+        varStep1 = demographics.from_input(), workPlan.from_input(), successBarriers.from_input()
     elif message.upper() == 'STEP 2' or message == '2':
-        var = workPlan.from_input()
+        varStep2 = workPlan.from_input(), successBarriers.from_input()
     elif message.upper() == 'STEP 3' or message == '3':
-        var = popServed(self)
+        varStep3 = popServed(self)
     elif message.upper() == 'STEP 4' or message == '4':
-        var = successBarriers.from_input()
+        varStep4 = successBarriers.from_input()
     elif message.upper() == 'REVIEW' or message == '5':
         reviewForm()
     elif message.upper() == 'EDIT' or message == '6':
