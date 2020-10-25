@@ -127,7 +127,7 @@ def reviewForm():
     print(f"Agency: {varStep1.agencyEntered}")
     print(f"Point of Contact: {varStep1.pointOfContactEntered}")
     print(f"County Served: {varStep1.globalCountyEntered}")
-    print(f"Intervention: {varStep1.globalInterventionEntered()}")
+    print(f"Intervention: {varStep1.globalInterventionEntered}")
     print(f"Overall Implementation Progress: {varStep2.implementationProgressEntered}")
     print(f"Workplan Step 1 Completed: {varStep2.targetPopId}")
     print(f"Workplan Step 2 Completed: {varStep2.haveIntvMaterials}")
