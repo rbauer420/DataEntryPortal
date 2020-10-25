@@ -40,7 +40,7 @@ userName = askName
        # for _r_ in userInputs:
         #    filewriter.writerow(_r_)
 
-#Global variables: FIX OUTPUT!!!!!
+#Global variables:
 def globalCountyEntered():
     global countyEntered
     globalCountyEntered = globalCountyEntered
@@ -171,7 +171,7 @@ prompt +=  '\n1. STEP 1 - Demographics'
 prompt +=  '\n2. STEP 2 - Workplan Steps'
 prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
-prompt +=  '\n5. REVIEW - Review Data Entered (AFTER you entered data for Steps 1 - 4)'
+prompt +=  '\n5. REVIEW - Review Data Entered (Select AFTER you entered data for Steps 1 - 4)'
 prompt +=  '\n6. EDIT - Edit Data Entered'
 prompt +=  '\n7. EXPORT - Export Form to CSV File'
 prompt +=  '\n8. EXIT - Exit the program\n\t'
