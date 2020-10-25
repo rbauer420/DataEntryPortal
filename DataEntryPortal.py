@@ -86,7 +86,7 @@ class workPlan:
     @classmethod
     def from_input(cls):
         return cls(
-            implementationProgressEntered = input(f'6. Please select which response option best describes your implementation progress for the intervention, {globalInterventionEntered} '
+            implementationProgressEntered = input(f'6. Please select which response option best describes your implementation progress for the intervention {varStep1.globalInterventionEntered}:  '
                                                   '\nA. No activities B. Planning activities only. C. Implementation/maintenance activities:  '),
             targetPopId = input("For the next five questions, please type “y” to report you have completed this step and “n” if you have not completed this workplan step."
                                 "\n7. Identified a target audience: " " "),
@@ -109,8 +109,8 @@ class successBarriers:
     @classmethod
     def from_input(cls):
         return cls(
-            successesEntered = input(f'15. Please describe what successes you have experienced in {globalCountyEntered} county in the past six months?: ' ' '),
-            barriersEntered = input(f'16. Please describe what barriers you have experienced in {globalCountyEntered} county in the past six months?: ' ' '),
+            successesEntered = input(f'15. Please describe what successes you have experienced in {varStep1.globalCountyEntered} county in the past six months?: ' ' '),
+            barriersEntered = input(f'16. Please describe what barriers you have experienced in {varStep1.globalCountyEntered} county in the past six months?: ' ' '),
         )
 
 def varStep4():
