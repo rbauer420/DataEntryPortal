@@ -118,8 +118,6 @@ def varStep4():
     return(varStep4)
 
 
-#Class Attributes 
-
 
 #Allows user to review form
 def reviewForm():
@@ -168,12 +166,12 @@ def editForm():
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
 print(f'\nWelcome to the Data Entry Portal, {userName}! ')
 
-prompt =  'Please enter which step number that corresponds with what section would you like to enter data:'
+prompt =  'Please enter which step number that corresponds with what section would you like to enter or edit previously entered data:'
 prompt +=  '\n1. STEP 1 - Demographics'
 prompt +=  '\n2. STEP 2 - Workplan Steps'
 prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
-prompt +=  '\n5. REVIEW - Review Data Entered'
+prompt +=  '\n5. REVIEW - Review Data Entered (AFTER you entered data for Steps 1 - 4)'
 prompt +=  '\n6. EDIT - Edit Data Entered'
 prompt +=  '\n7. EXPORT - Export Form to CSV File'
 prompt +=  '\n8. EXIT - Exit the program\n\t'
@@ -185,9 +183,9 @@ while tableOfContents == True:
     message = input(prompt)
 
     if message.upper() == 'STEP 1' or message == '1':
-        varStep1 = demographics.from_input(), workPlan.from_input(), successBarriers.from_input()
+        varStep1 = demographics.from_input()
     elif message.upper() == 'STEP 2' or message == '2':
-        varStep2 = workPlan.from_input(), successBarriers.from_input()
+        varStep2 = workPlan.from_input()
     elif message.upper() == 'STEP 3' or message == '3':
         varStep3 = popServed(self)
     elif message.upper() == 'STEP 4' or message == '4':
