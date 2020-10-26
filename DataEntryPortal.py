@@ -17,29 +17,6 @@ askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")
 userName = askName
 
 
-#CSV file
-#def draftReport ():
- #   with open('testReport2.csv', 'w') as csv_file:
-  #      fieldnames = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
-   #     csv_writer = csv.writer(csv_file, fieldnames=fieldnames, delimiter='\t')
-    #    csv_writer.writeheader()
-     #   for line in csv_writer.writerow(dateEntered, agencyEntered, pointOfContactEntered, globalCountyEntered, globalInterventionEntered,):
-      #      csv_writer.writerow(line)
-
-       # print(f'Thank you {userName} for submitting your form! Have a great day!\n')
-        #sys.exit() 
-
-
-
-#def createTestReport(testReport):
-    #userInputs = (demographics, workPlan, successBarriers)
-    #headers = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
-    #with open('testReport.csv', 'w', newline='') as csvfile:
-     #   filewriter = csv.writer(csvfile)
-      #  filewriter.writerow(headers)
-       # for _r_ in userInputs:
-        #    filewriter.writerow(_r_)
-
 #Global variables:
 def globalCountyEntered():
     global countyEntered
@@ -101,6 +78,43 @@ def varStep2():
     return(varStep2)
 
 
+class popServed:
+    def __init__(self, ageUnder18, ageUnder30, ageOver30, Asian, BlackAfricanAmerican, White, Hispanic, otherRaceEthnicity, popRural, popLowSES, popStudents, popVeterans):
+        self.ageUnder18 = ageUnder18
+        self.ageUnder30 = ageUnder30
+        self.ageOver30 = ageOver30
+        self.Asian = Asian
+        self.BlackAfricanAmerican = BlackAfricanAmerican
+        self.White = White
+        self.otherRaceEthnicity = otherRaceEthnicity
+        self.popRural = popRural
+        self.popLowSES = popLowSES
+        self.popStudents = popStudents
+        self.popVeterans = popVeterans
+
+    @classmethod
+    def from_input(cls):
+        return cls(
+           ageUnder18 = input (f"12a. Please enter the total number of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           ageUnder30 = input (f"12b. Please enter the total number of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           ageOver30 = input (f"12c. Please enter the total number of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           Asian = input (f"13a. Please enter the total number of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           BlackAfricanAmerican = input (f"13b. Please enter the total number of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           White = input (f"13c. Please enter the total number of people served who identified as Caucasian or White nd served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           Hispanic = input (f"13d. Please enter the total number of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           otherRaceEthnicity = input (f"13e. Please enter the total number of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popRural = input (f"14a. Please enter the total number of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popLowSES = input (f"14b. Please enter the total number of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popStudents = input (f"14c. Please enter the total number of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popVeterans = input (f"14d. Please enter the total number of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+        )
+
+def varStep3():
+    varStep3 = popServed
+    return(varStep3)
+
+
+
 class successBarriers:
     def __init__(self, successesEntered, barriersEntered):
         self.successesEntered = successesEntered
@@ -132,35 +146,45 @@ def reviewForm():
     print(f"Workplan Step 3 Completed: {varStep2.impFidelity}")
     print(f"Workplan Step 4 Completed: {varStep2.collectedPrePost}")
     print(f"Workplan Step 5 Completed: {varStep2.haveSharedData}")
+    print(f"Population served under 18: {varStep3.ageUnder18}")
+    print(f"Population served bewteen 18 and 29: {varStep3.ageUnder30}")
+    print(f"Population served 30 or older: {varStep3.ageOver30}")
+    print(f"Population served who identified as Asian: {varStep3.Asian}")
+    print(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}")
+    print(f"Population served who identified as Caucasian or White: {varStep3.White}")
+    print(f"Population served who lived in rural areas: {varStep3.popRural}")
+    print(f"Population served who were classified as having low-socioeconmic status: {varStep3.popLowSES}")
+    print(f"Population served who were students: {varStep3.popStudents}")
+    print(f"Population served who were Veterans: {varStep3.popVeterans}")
     print(f"Successes: {varStep4.successesEntered}")
     print(f"Challenges: {varStep4.barriersEntered}")
 
 
-    #print(input(f'Data entered:{dateEntered}, {agencyEntered}, {pointOfContactEntered}, {globalCountyEntered}, {globalInterventionEntered}, {implementationProgressEntered}, {targetPopId}, {haveIntvMaterials}, {impFidelity}, {collectedPrePost}, {haveSharedData}, {successesEntered}, {barriersEntered}'))
 
-                       #print({demographics}(dateEntered, agencyEntered, pointOfContactEntered, globalCountyEntered, globalInterventionEntered), 
-                       #workPlan(implementationProgressEntered, targetPopId, haveIntvMaterials, impFidelity, collectedPrePost, haveSharedData), 
-                       #successBarriers(successesEntered, barriersEntered))
+#CSV file
+#def draftReport ():
+    #with open('testReport3.csv', 'w') as csv_file:
+        #fieldnames = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
+        #csv_writer = csv.writer(csv_file, fieldnames=fieldnames, delimiter='\t')
+        #csv_writer.writeheader()
+        #for line in csv_writer.writerow [varStep1.dateEntered, varStep1.agencyEntered, varStep1.pointOfContactEntered,varStep1.globalCountyEntered,
+                                        #varStep1.globalInterventionEntered, varStep2.implementationProgressEntered, varStep2.targetPopId,varStep2.haveIntvMaterials, 
+                                        #varStep2.impFidelity, varStep2.collectedPrePost, varStep2.haveSharedData, varStep4.successesEntered, varStep4.barriersEntered]
+        #csv_writer.writerow(line)
+
+    #print(f'Thank you {userName} for submitting your form! Have a great day!\n')
+    #sys.exit() 
 
 
-#Allows user to edit form
-def editForm():
-    formSection = input('\nWhich section would you like to change?'
-        '\n1. Demographics'
-        '\n2. Workplan Steps'
-        '\n3. Populations Served'
-        '\n4. Successes and Barriers'
-        '\n5. I do not wish to edit my data\n\t')
-    if message.lower() == '1' or message == 'demographics':
-        varStep1 = demographics.from_input()
-    elif message.upper() == '2' or message == 'workplan steps':
-        varStep2 = workPlan.from_input()
-    elif message.upper() == '3' or message == 'populations served':
-        varStep3 = popServed()
-    elif message.upper() == '4' or message == 'successes and barriers':
-        varStep4 = successBarriers.from_input()
-    else:
-        pass 
+
+#def createTestReport(testReport):
+    #userInputs = (demographics, workPlan, successBarriers)
+    #headers = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
+    #with open('testReport.csv', 'w', newline='') as csvfile:
+     #   filewriter = csv.writer(csvfile)
+      #  filewriter.writerow(headers)
+       # for _r_ in userInputs:
+        #    filewriter.writerow(_r_)
 
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
@@ -172,9 +196,8 @@ prompt +=  '\n2. STEP 2 - Workplan Steps'
 prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
 prompt +=  '\n5. REVIEW - Review Data Entered (Select AFTER you entered data for Steps 1 - 4)'
-prompt +=  '\n6. EDIT - Edit Data Entered'
-prompt +=  '\n7. EXPORT - Export Form to CSV File'
-prompt +=  '\n8. EXIT - Exit the program\n\t'
+prompt +=  '\n6. EXPORT - Export Form to CSV File'
+prompt +=  '\n7. EXIT - Exit the program\n\t'
 
 
 #This class is an indefite loop that will repeat until the user exits the portal
@@ -187,42 +210,20 @@ while tableOfContents == True:
     elif message.upper() == 'STEP 2' or message == '2':
         varStep2 = workPlan.from_input()
     elif message.upper() == 'STEP 3' or message == '3':
-        varStep3 = popServed(self)
+        varStep3 = popServed.from_input()
     elif message.upper() == 'STEP 4' or message == '4':
         varStep4 = successBarriers.from_input()
     elif message.upper() == 'REVIEW' or message == '5':
         reviewForm()
-    elif message.upper() == 'EDIT' or message == '6':
-        editForm()
-    elif message.upper() == 'EXPORT' or message == '7':
-        var = draftReport(self)
-    elif message.upper() == 'EXIT' or message == '8':
+    elif message.upper() == 'EXPORT' or message == '6':
+        draftReport(self)
+    elif message.upper() == 'EXIT' or message == '7':
         print(f'Thank you {globalUserName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
 
-
-#Python class populationServed: "Please enter the total number for each population served by each demographics category:
-class popServed:
-    pass
-
-    #12. Age:
-        #A.	Under 18: ___
-        #B.	18 – 29: ___
-        #C.	30 or older: ___
-    #13. Race and Ethnicity:
-        #A.	Asian: ___
-        #B.	Black/African American: ___
-        #C.	White/Caucasian: ___
-        #D.	Hispanic: ___
-        #E.	Other: ___
-    #14.	Target populations: 
-        #A.	Individuals living in rural areas: ___
-        #B.	Persons with low SES: ___
-        #C.	Students 
-        #D.	Veterans: ___  
 
 #Python class Export:Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
 
