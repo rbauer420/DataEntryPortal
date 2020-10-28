@@ -86,6 +86,7 @@ class popServed:
         self.Asian = Asian
         self.BlackAfricanAmerican = BlackAfricanAmerican
         self.White = White
+        self.Hispanic = Hispanic
         self.otherRaceEthnicity = otherRaceEthnicity
         self.popRural = popRural
         self.popLowSES = popLowSES
@@ -152,6 +153,8 @@ def reviewForm():
     print(f"Population served who identified as Asian: {varStep3.Asian}")
     print(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}")
     print(f"Population served who identified as Caucasian or White: {varStep3.White}")
+    print(f"Population served who identified as Hispanic: {varStep3.Hispanic}")
+    print(f"Population served who identified as as another race or ethnicity: {varStep3.otherRaceEthnicity}")
     print(f"Population served who lived in rural areas: {varStep3.popRural}")
     print(f"Population served who were classified as having low-socioeconmic status: {varStep3.popLowSES}")
     print(f"Population served who were students: {varStep3.popStudents}")
@@ -161,30 +164,19 @@ def reviewForm():
 
 
 
-#CSV file
-#def draftReport ():
-    #with open('testReport3.csv', 'w') as csv_file:
-        #fieldnames = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
-        #csv_writer = csv.writer(csv_file, fieldnames=fieldnames, delimiter='\t')
-        #csv_writer.writeheader()
-        #for line in csv_writer.writerow [varStep1.dateEntered, varStep1.agencyEntered, varStep1.pointOfContactEntered,varStep1.globalCountyEntered,
-                                        #varStep1.globalInterventionEntered, varStep2.implementationProgressEntered, varStep2.targetPopId,varStep2.haveIntvMaterials, 
-                                        #varStep2.impFidelity, varStep2.collectedPrePost, varStep2.haveSharedData, varStep4.successesEntered, varStep4.barriersEntered]
-        #csv_writer.writerow(line)
+#Class Export: Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
+def draftReport():
+    with open('userDataEntryPortalReport.csv', 'w', newline='') as f:
+        the_writer = csv.writer(f)
 
-    #print(f'Thank you {userName} for submitting your form! Have a great day!\n')
-    #sys.exit() 
-
-
-
-#def createTestReport(testReport):
-    #userInputs = (demographics, workPlan, successBarriers)
-    #headers = ['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 'WP Step 5', 'successes', 'challenges']
-    #with open('testReport.csv', 'w', newline='') as csvfile:
-     #   filewriter = csv.writer(csvfile)
-      #  filewriter.writerow(headers)
-       # for _r_ in userInputs:
-        #    filewriter.writerow(_r_)
+        the_writer.writerow(['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 
+                            'WP Step 5', 'Under 18', 'Under 30', 'Over 30', 'Asian', 'Black/African American', 'White', 'Hispanic', 'Other Race or Ethnicity', 
+                            'Rural', 'LowSES', 'Students', 'Veterans', 'Successes', 'Barriers'])
+        the_writer.writerow([varStep1.dateEntered, varStep1.agencyEntered, varStep1.pointOfContactEntered, varStep1.globalCountyEntered, varStep1.globalInterventionEntered, 
+                            varStep2.implementationProgressEntered, varStep2.targetPopId,varStep2.haveIntvMaterials, varStep2.impFidelity, varStep2.collectedPrePost, 
+                            varStep2.haveSharedData, varStep3.ageUnder18, varStep3.ageUnder30, varStep3.ageOver30, varStep3.Asian, varStep3.BlackAfricanAmerican, varStep3.White, 
+                            varStep3.Hispanic, varStep3.otherRaceEthnicity, varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans, varStep4.successesEntered, 
+                            varStep4.barriersEntered])
 
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
@@ -216,20 +208,13 @@ while tableOfContents == True:
     elif message.upper() == 'REVIEW' or message == '5':
         reviewForm()
     elif message.upper() == 'EXPORT' or message == '6':
-        draftReport(self)
+        draftReport()
     elif message.upper() == 'EXIT' or message == '7':
         print(f'Thank you {globalUserName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 
     else:
         print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
-
-
-#Python class Export:Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
-
-#Use pickle to display data CSV file graphically. 
-
- 
 
 
  #Back burner:
