@@ -25,7 +25,7 @@
   import csv:
       pip install python-csv
 
-  
+
 [Password Verification]
   Once the code is downloaded, the user will be welcomed to the portal and asked for the password, which is "janeDoe".  
   
@@ -47,7 +47,7 @@
       (6) EXPORT - Export Form to CSV file
       (7) EXIT - Exit the program  
       
-  If a user enters "step" and a number 1 - 4 (not case sensitive) or only a number, the program will take them to the questions in that class. After the user enters data for every question in the class, the program will take them to the main menu to enter data for all 4 steps. 
+  If a user enters "step" and a number 1 - 4 (not case sensitive) or only a number, the program will take them to the questions in that class. After the user enters data for every question in the class, the program will take them to the main menu to enter data for all 4 steps.  The users must enter data for all steps and in the order of the steps due to the global variables and functions called througout the program.  
 
   Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. 
 
@@ -72,7 +72,7 @@
 
 
 [Step 3: Population(s) Served]  
-Users will be asked to enter numbers of people served based on target populations for the intervention entered in Step 1.
+Users will be asked to enter whole numbers of people served based on target populations for the intervention entered in Step 1.
 
 Target populations include: 
     People under 18 years old 
@@ -88,7 +88,9 @@ Target populations include:
     People who are students
     People who are Veterans
 
-  ###########Histogram 
+Values inputed by the user will be converted to an integer.
+
+###########Histogram 
 
 
 [Step 4: Successes and Barriers]  

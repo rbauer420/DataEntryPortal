@@ -96,18 +96,18 @@ class popServed:
     @classmethod
     def from_input(cls):
         return cls(
-           ageUnder18 = input (f"12a. Please enter the total number of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           ageUnder30 = input (f"12b. Please enter the total number of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           ageOver30 = input (f"12c. Please enter the total number of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           Asian = input (f"13a. Please enter the total number of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           BlackAfricanAmerican = input (f"13b. Please enter the total number of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           White = input (f"13c. Please enter the total number of people served who identified as Caucasian or White nd served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           Hispanic = input (f"13d. Please enter the total number of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           otherRaceEthnicity = input (f"13e. Please enter the total number of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           popRural = input (f"14a. Please enter the total number of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           popLowSES = input (f"14b. Please enter the total number of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           popStudents = input (f"14c. Please enter the total number of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " "),
-           popVeterans = input (f"14d. Please enter the total number of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           ageUnder18 = int(input(f"12a. Please enter the total number of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           ageUnder30 = int(input(f"12b. Please enter the total number of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           ageOver30 = int(input(f"12c. Please enter the total number of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           Asian = int(input(f"13a. Please enter the total number of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           BlackAfricanAmerican = int(input(f"13b. Please enter the total number of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           White = int(input(f"13c. Please enter the total number of people served who identified as Caucasian or White nd served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           Hispanic = int(input(f"13d. Please enter the total number of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           otherRaceEthnicity = int(input(f"13e. Please enter the total number of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           popRural = int(input(f"14a. Please enter the total number of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           popLowSES = int(input(f"14b. Please enter the total number of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           popStudents = int(input(f"14c. Please enter the total number of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           popVeterans = int(input(f"14d. Please enter the total number of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
         )
 
 def varStep3():
