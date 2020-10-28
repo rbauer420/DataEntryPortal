@@ -25,6 +25,10 @@
   import csv:
       pip install python-csv
 
+[Launching program]
+  In the terminal enter:
+      python DataEntryPortal.py
+
 
 [Password Verification]
   Once the code is downloaded, the user will be welcomed to the portal and asked for the password, which is "janeDoe".  
