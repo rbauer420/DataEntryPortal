@@ -177,7 +177,7 @@ def draftReport():
                             varStep2.haveSharedData, varStep3.ageUnder18, varStep3.ageUnder30, varStep3.ageOver30, varStep3.Asian, varStep3.BlackAfricanAmerican, varStep3.White, 
                             varStep3.Hispanic, varStep3.otherRaceEthnicity, varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans, varStep4.successesEntered, 
                             varStep4.barriersEntered])
-
+print(f"Thank you for exporting your data to a CSV file {userName}!  You will be able to view your CSV file with your entries in the DataEntryPortal folder ")
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
 print(f'\nWelcome to the Data Entry Portal, {userName}! ')
@@ -210,7 +210,7 @@ while tableOfContents == True:
     elif message.upper() == 'EXPORT' or message == '6':
         draftReport()
     elif message.upper() == 'EXIT' or message == '7':
-        print(f'Thank you {globalUserName} for using the Data Entry Portal. Have a great day!\n')
+        print(f'Thank you {userName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 
     else:
