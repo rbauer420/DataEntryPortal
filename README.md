@@ -58,7 +58,8 @@
 
   After the user is done entering and reviewing their data, they have the option to export their data to a CSV file by entering "EXPORT" (not case sensitive) or 6.  This function will populate a CSV file titled, "userDataEntryPortalWorkbook.csv" with their data and headers for each of the questions they responded to. 
 
-  ######After the user is done entering and reviewing their data, they have the option to export their data to a TXT file by entering "REPORT" (not case sensitive) or 7.  This function will populate a CSV file titled, "userDataEntryPortalReport.txt" with their data and headers for each of the questions they responded to. 
+  After the user is done entering and reviewing their data, they have the option to export their data to a TXT file by entering "REPORT" (not case sensitive) or 7.  This function will populate a TXT file titled, "userDataEntryPortalReport.txt".  The title of the file will say, "{Name of County Entered} INTERVENTION TRACKING FORM and beneath that there will be headers describing each section of the report and their responses for each of the questions they responded to. 
+  ######DATA VISUALIZATION
 
   If the user enters "EXIT" (not case sensitive) or 8, they will be thanked for using the Data Entry Portal and the program will end.  
   
@@ -74,8 +75,6 @@
 
   Users will then be asked to input yes "y" or no "n" to report if they have or have not completed the five fidelity steps of their workplan.
   ########### "y" and "n" upper
-  
-  ###########Pie graph
 
 
 [Step 3: Population(s) Served]  
