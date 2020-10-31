@@ -165,8 +165,8 @@ def reviewForm():
 
 
 #Class Export: Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
-def draftReport():
-    with open('userDataEntryPortalReport.csv', 'w', newline='') as f:
+def draftCSV():
+    with open('userDataEntryPortalWorkbook.csv', 'w', newline='') as f:
         the_writer = csv.writer(f)
 
         the_writer.writerow(['date', 'agency', 'POC', 'county', 'intervention', 'implementation status', 'WP Step 1', 'WP Step 2', 'WP Step 3', 'WP Step 4', 
@@ -177,7 +177,40 @@ def draftReport():
                             varStep2.haveSharedData, varStep3.ageUnder18, varStep3.ageUnder30, varStep3.ageOver30, varStep3.Asian, varStep3.BlackAfricanAmerican, varStep3.White, 
                             varStep3.Hispanic, varStep3.otherRaceEthnicity, varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans, varStep4.successesEntered, 
                             varStep4.barriersEntered])
-print(f"Thank you for exporting your data to a CSV file {userName}!  You will be able to view your CSV file with your entries in the DataEntryPortal folder ")
+
+    f.close()
+
+
+#Class Report: Once user selects this option, the program will export all of the data entered by the user to a TXT file. 
+def draftReport():
+    with open('userDataEntryPortalReport.txt', 'w') as f:
+            f.write(f"Date: {varStep1.dateEntered}")
+            f.write(f"Agency: {varStep1.agencyEntered}")
+            f.write(f"Point of Contact: {varStep1.pointOfContactEntered}")
+            f.write(f"County Served: {varStep1.globalCountyEntered}")
+            f.write(f"Intervention: {varStep1.globalInterventionEntered}")
+            f.write(f"Overall Implementation Progress: {varStep2.implementationProgressEntered}")
+            f.write(f"Workplan Step 1 Completed: {varStep2.targetPopId}")
+            f.write(f"Workplan Step 2 Completed: {varStep2.haveIntvMaterials}")
+            f.write(f"Workplan Step 3 Completed: {varStep2.impFidelity}")
+            f.write(f"Workplan Step 4 Completed: {varStep2.collectedPrePost}")
+            f.write(f"Workplan Step 5 Completed: {varStep2.haveSharedData}")
+            f.write(f"Population served under 18: {varStep3.ageUnder18}")
+            f.write(f"Population served bewteen 18 and 29: {varStep3.ageUnder30}")
+            f.write(f"Population served 30 or older: {varStep3.ageOver30}")
+            f.write(f"Population served who identified as Asian: {varStep3.Asian}")
+            f.write(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}")
+            f.write(f"Population served who identified as Caucasian or White: {varStep3.White}")
+            f.write(f"Population served who identified as Hispanic: {varStep3.Hispanic}")
+            f.write(f"Population served who identified as as another race or ethnicity: {varStep3.otherRaceEthnicity}")
+            f.write(f"Population served who lived in rural areas: {varStep3.popRural}")
+            f.write(f"Population served who were classified as having low-socioeconmic status: {varStep3.popLowSES}")
+            f.write(f"Population served who were students: {varStep3.popStudents}")
+            f.write(f"Population served who were Veterans: {varStep3.popVeterans}")
+            f.write(f"Successes: {varStep4.successesEntered}")
+            f.write(f"Challenges: {varStep4.barriersEntered}")
+    f.close()
+
 
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
 print(f'\nWelcome to the Data Entry Portal, {userName}! ')
@@ -189,7 +222,8 @@ prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
 prompt +=  '\n5. REVIEW - Review Data Entered (Select AFTER you entered data for Steps 1 - 4)'
 prompt +=  '\n6. EXPORT - Export Form to CSV File'
-prompt +=  '\n7. EXIT - Exit the program\n\t'
+prompt +=  '\n7. REPORT - Draft Report to TXT file'
+prompt +=  '\n8. EXIT - Exit the program\n\t'
 
 
 #This class is an indefite loop that will repeat until the user exits the portal
@@ -208,8 +242,10 @@ while tableOfContents == True:
     elif message.upper() == 'REVIEW' or message == '5':
         reviewForm()
     elif message.upper() == 'EXPORT' or message == '6':
+        draftCSV()
+    elif message.upper() == 'REPORT' or message == '7':
         draftReport()
-    elif message.upper() == 'EXIT' or message == '7':
+    elif message.upper() == 'EXIT' or message == '8':
         print(f'Thank you {userName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 

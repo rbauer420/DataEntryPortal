@@ -49,15 +49,18 @@
       (4) Step 4 - Successes and Barriers
       (5) REVIEW - Review Data Entered (Select AFTER you entered data for Steps 1 - 4) 
       (6) EXPORT - Export Form to CSV file
-      (7) EXIT - Exit the program  
+      (7) REPORT - Draft Report to TXT file
+      (8) EXIT - Exit the program  
       
   If a user enters "step" and a number 1 - 4 (not case sensitive) or only a number, the program will take them to the questions in that class. After the user enters data for every question in the class, the program will take them to the main menu to enter data for all 4 steps.  The users must enter data for all steps and in the order of the steps due to the global variables and functions called througout the program.  
 
   Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. 
 
-  After the user is done entering and reviewing their data, they have the option to export their data to a CSV file by entering "EXPORT" (not case sensitive) or 6.  This function will populate a CSV file titled, "userDataEntryPortalReport.csv" with their data and headers for each of the questions they responded to. 
+  After the user is done entering and reviewing their data, they have the option to export their data to a CSV file by entering "EXPORT" (not case sensitive) or 6.  This function will populate a CSV file titled, "userDataEntryPortalWorkbook.csv" with their data and headers for each of the questions they responded to. 
 
-  If the user enters "EXIT" (not case sensitive) or 7, they will be thanked for using the Data Entry Portal and the program will end.  
+  ######After the user is done entering and reviewing their data, they have the option to export their data to a TXT file by entering "REPORT" (not case sensitive) or 7.  This function will populate a CSV file titled, "userDataEntryPortalReport.txt" with their data and headers for each of the questions they responded to. 
+
+  If the user enters "EXIT" (not case sensitive) or 8, they will be thanked for using the Data Entry Portal and the program will end.  
   
   If the user enters anything other than the promps, the program will print, "I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
   
