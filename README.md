@@ -1,10 +1,12 @@
 # Project Name: DataEntryPortal
 
 [Program Overview]
+
   The purpose of this project is to allow users to report data on the progress of their substance use prevention intervention implementation as well as populations served, successes and challenges. The DataEntryProtal creates a report in a separate file for users to review which includes their responses displayed in a list or data visualization format. 
 
 
 [Python Project Requirements]
+
     Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
 
     Create a class, then create at least one object of that class and populate it with data
@@ -17,6 +19,7 @@
 
 
 [Required system imports:]
+
   import sys:
       pip install os-sys
 
@@ -33,6 +36,7 @@
 
 
 [Password Verification]
+
   Once the code is downloaded, the user will be welcomed to the portal and asked for the password, which is "janeDoe".  
   
   If the user enters the correct password, the program will print, "Access Granted," and will be asked to enter their name.
@@ -41,6 +45,7 @@
   
 
 [Program Menu]
+
   After the password verification loop, users will be welcomed to the Data Entry Portal (addressed by the name entered) and the program will enter an endifinite loop named, "tableOfContents," which will repeat until the user exists the program.
 
   The portal is broken into four steps (programmed as classes): 
@@ -71,17 +76,20 @@
   
 
 [Step 1: Demographics]  
+
   Users will be asked to enter the date, name of their agency, name of point of contact, name of county they serve, and the name of the substance use prevention intervention implemtned in the county they serve (e.g. Strengthening Families, Too Good For Drugs. Local Capacity Building, Media Campaigns, etc.).  The name of the intervention will be imported to the print statement in Step 2 and Step 3 and the name of the county entered will be inputed in Step 4. 
   
  
-[Step 2: Workplan Steps]  
+[Step 2: Workplan Steps]
+
   Users will be asked to select from a multiple choice bank their overall implementation progress for the substance use prevention intervention entered in Step 1.  The choice options include, "A. No activities B. Planning activities only. C. Implementation/maintenance activities". The user should enter "A", "B", or "C", but there is no error message if another response is entered. 
 
   Users will then be asked to input yes "y" or no "n" to report if they have or have not completed the five fidelity steps of their workplan.
   ########### "y" and "n" upper
 
 
-[Step 3: Population(s) Served]  
+[Step 3: Population(s) Served] 
+
 Users will be asked to enter whole numbers of people served based on target populations for the intervention entered in Step 1.
 
 Target populations include: 
@@ -98,10 +106,7 @@ Target populations include:
     People who are students
     People who are Veterans
 
-Values inputed by the user will be converted to an integer.
-
-###########Histogram 
-
 
 [Step 4: Successes and Barriers]  
+
   The last two questions will allow users to describe the successes and barriers faced during the substance use prevention intervention implementation for the county they entered in Step 1 in an open-ended field.  
