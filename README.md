@@ -5,6 +5,7 @@
   The purpose of this project is to allow users to report data on the progress of their substance use prevention intervention implementation as well as populations served, successes and challenges. The DataEntryProtal creates a report in a separate file for users to review which includes their responses displayed in a list or data visualization format. 
 
 
+
 [Python Project Requirements]
 
     Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
@@ -16,6 +17,7 @@
     Create and call at least 3 functions, at least one of which must return a value that is used
 
     Visualize data in a graph, chart, or other visual representation of data
+
 
 
 [Required system imports:]
@@ -30,9 +32,12 @@
       pip install matplotlib
 
 
+
 [Launching program]
+
   In the terminal enter:
       python DataEntryPortal.py
+
 
 
 [Password Verification]
@@ -43,6 +48,7 @@
   
   If the user does not enter the correct password, the program will print, "Incorrect Password. Access NOT Granted," and the program will end.
   
+
 
 [Program Menu]
 
@@ -75,17 +81,20 @@
   If the user enters anything other than the promps, the program will print, "I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
   
 
+
 [Step 1: Demographics]  
 
   Users will be asked to enter the date, name of their agency, name of point of contact, name of county they serve, and the name of the substance use prevention intervention implemtned in the county they serve (e.g. Strengthening Families, Too Good For Drugs. Local Capacity Building, Media Campaigns, etc.).  The name of the intervention will be imported to the print statement in Step 2 and Step 3 and the name of the county entered will be inputed in Step 4. 
   
  
+
 [Step 2: Workplan Steps]
 
   Users will be asked to select from a multiple choice bank their overall implementation progress for the substance use prevention intervention entered in Step 1.  The choice options include, "A. No activities B. Planning activities only. C. Implementation/maintenance activities". The user should enter "A", "B", or "C", but there is no error message if another response is entered. 
 
   Users will then be asked to input yes "y" or no "n" to report if they have or have not completed the five fidelity steps of their workplan.
   ########### "y" and "n" upper
+
 
 
 [Step 3: Population(s) Served] 
@@ -105,6 +114,7 @@ Target populations include:
     People who are classified as having low socio-econmic status
     People who are students
     People who are Veterans
+
 
 
 [Step 4: Successes and Barriers]  
