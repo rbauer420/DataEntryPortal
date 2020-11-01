@@ -9,9 +9,7 @@
 
     Create a class, then create at least one object of that class and populate it with data
 
-    ???Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program
-
-    !!!Read data from an external file, such as text, JSON, CSV, etc and use that data in your application
+    Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program
 
     Create and call at least 3 functions, at least one of which must return a value that is used
 
@@ -24,6 +22,10 @@
 
   import csv:
       pip install python-csv
+  
+  from matplotlib import pyplot as plt:
+      pip install matplotlib
+
 
 [Launching program]
   In the terminal enter:

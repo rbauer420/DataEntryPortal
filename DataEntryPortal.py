@@ -1,5 +1,6 @@
 import sys
 import csv
+from matplotlib import pyplot as plt
 
 #Welcome to the program and password verification 
 print ("Welcome to the Intervention Data Reporting Portal. Please enter your password to gain access and to submit your Intervention Reporting Form:")
@@ -163,6 +164,19 @@ def reviewForm():
     print(f"Challenges: {varStep4.barriersEntered}")
 
 
+#Data visualzation
+def dataVisualization():
+    plt.style.use("fivethirtyeight")
+    agePlotx = ([varStep3.ageUnder18, varStep3.ageUnder30, varStep3.ageOver30])
+    agePloty = ([1, 10, 20])
+
+    plt.bar(agePlotx, agePloty, color="#444444", label="Pop Served Age")
+    plt.legend()
+    plt.title("Population Served by Age")
+    plt.xlabel("Age Group")
+    plt.ylabel("Total Served")
+    plt.tight_layout()
+    plt.show()
 
 #Class Export: Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
 def draftCSV():
@@ -228,7 +242,6 @@ def draftReport():
             f.write(f"Challenges: {varStep4.barriersEntered}\n")
     f.close()
 
-
 #Data Entry Portal Instructions and Table of Contents. Prompts for the user on how to navigate and exit out of the application.
 print(f'\nWelcome to the Data Entry Portal, {userName}! ')
 
@@ -238,9 +251,10 @@ prompt +=  '\n2. STEP 2 - Workplan Steps'
 prompt +=  '\n3. STEP 3 - Population Served'
 prompt +=  '\n4. STEP 4 - Successes and Barriers'
 prompt +=  '\n5. REVIEW - Review Data Entered (Select AFTER you entered data for Steps 1 - 4)'
-prompt +=  '\n6. EXPORT - Export Form to CSV File'
-prompt +=  '\n7. REPORT - Draft Report to TXT file'
-prompt +=  '\n8. EXIT - Exit the program\n\t'
+prompt +=  '\n6. VIZ - Data Visualization (Select AFTER you entered data for Steps 1 - 4)'
+prompt +=  '\n7. EXPORT - Export Form to CSV File'
+prompt +=  '\n8. REPORT - Draft Report to TXT file'
+prompt +=  '\n9. EXIT - Exit the program\n\t'
 
 
 #This class is an indefite loop that will repeat until the user exits the portal
@@ -258,11 +272,13 @@ while tableOfContents == True:
         varStep4 = successBarriers.from_input()
     elif message.upper() == 'REVIEW' or message == '5':
         reviewForm()
-    elif message.upper() == 'EXPORT' or message == '6':
+    elif message.upper() == 'VIZ' or message == '6':
+        dataVisualization()
+    elif message.upper() == 'EXPORT' or message == '7':
         draftCSV()
-    elif message.upper() == 'REPORT' or message == '7':
+    elif message.upper() == 'REPORT' or message == '8':
         draftReport()
-    elif message.upper() == 'EXIT' or message == '8':
+    elif message.upper() == 'EXIT' or message == '9':
         print(f'Thank you {userName} for using the Data Entry Portal. Have a great day!\n')
         menu = False
         sys.exit() 
