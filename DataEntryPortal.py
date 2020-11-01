@@ -97,18 +97,18 @@ class popServed:
     @classmethod
     def from_input(cls):
         return cls(
-           ageUnder18 = int(input(f"12a. Please enter the total number of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           ageUnder30 = int(input(f"12b. Please enter the total number of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           ageOver30 = int(input(f"12c. Please enter the total number of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           Asian = int(input(f"13a. Please enter the total number of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           BlackAfricanAmerican = int(input(f"13b. Please enter the total number of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           White = int(input(f"13c. Please enter the total number of people served who identified as Caucasian or White nd served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           Hispanic = int(input(f"13d. Please enter the total number of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           otherRaceEthnicity = int(input(f"13e. Please enter the total number of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popRural = int(input(f"14a. Please enter the total number of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popLowSES = int(input(f"14b. Please enter the total number of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popStudents = int(input(f"14c. Please enter the total number of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popVeterans = int(input(f"14d. Please enter the total number of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           ageUnder18 = input(f"12a. Please enter the total number of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           ageUnder30 = input(f"12b. Please enter the total number of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           ageOver30 = input(f"12c. Please enter the total number of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           Asian = input(f"13a. Please enter the total number of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           BlackAfricanAmerican = input(f"13b. Please enter the total number of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           White = input(f"13c. Please enter the total number of people served who identified as Caucasian or White nd served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           Hispanic = input(f"13d. Please enter the total number of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           otherRaceEthnicity = input(f"13e. Please enter the total number of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popRural = input(f"14a. Please enter the total number of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popLowSES = input(f"14b. Please enter the total number of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popStudents = input(f"14c. Please enter the total number of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " "),
+           popVeterans = input(f"14d. Please enter the total number of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " "),
         )
 
 def varStep3():
@@ -165,18 +165,45 @@ def reviewForm():
 
 
 #Data visualzation
-def dataVisualization():
+def dataVisualizationAge():
     plt.style.use("fivethirtyeight")
-    agePlotx = ([varStep3.ageUnder18, varStep3.ageUnder30, varStep3.ageOver30])
-    agePloty = ([1, 10, 20])
+    agePlotx = ["Under 18", "18 - 29", "30 and older"]
+    agePloty = ([varStep3.ageUnder18, varStep3.ageUnder30, varStep3.ageOver30])
 
-    plt.bar(agePlotx, agePloty, color="#444444", label="Pop Served Age")
+    plt.bar(agePlotx, agePloty, color="dodgerblue", label="Pop Served Age")
     plt.legend()
     plt.title("Population Served by Age")
     plt.xlabel("Age Group")
     plt.ylabel("Total Served")
     plt.tight_layout()
     plt.show()
+
+def dataVisualizationRaceEthnicity():
+    plt.style.use("fivethirtyeight")
+    agePlotx = ["Asian", "Black/African American", "Caucasian/White", "Hispanic", "Other Race/Ethnicity"]
+    agePloty = ([varStep3.Asian, varStep3.BlackAfricanAmerican, varStep3.White, varStep3.Hispanic, varStep3.otherRaceEthnicity])
+
+    plt.bar(agePlotx, agePloty, color="#1f77b4", label="Pop Served Race/Ethnicity")
+    plt.legend()
+    plt.title("Population Served by Race and Ethnicity")
+    plt.xlabel("Race/Ethnicity")
+    plt.ylabel("Total Served")
+    plt.tight_layout()
+    plt.show()
+
+def dataVisualizationTargetPop():
+    plt.style.use("fivethirtyeight")
+    agePlotx = ["Persons in Rural Areas", "Persons Classified as Low SES", "Students", "Veterans"]
+    agePloty = ([varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans])
+
+    plt.bar(agePlotx, agePloty, color="#17becf", label="Pop Served Race/Ethnicity")
+    plt.legend()
+    plt.title("Population Served by Target Populations")
+    plt.xlabel("Target Population")
+    plt.ylabel("Total Served")
+    plt.tight_layout()
+    plt.show()
+
 
 #Class Export: Once user selects this option, the program will export all of the data entered by the user in a CSV file. 
 def draftCSV():
@@ -225,6 +252,8 @@ def draftReport():
             f.write(f"Population served under 18: {varStep3.ageUnder18}\n")
             f.write(f"Population served bewteen 18 and 29: {varStep3.ageUnder30}\n")
             f.write(f"Population served 30 or older: {varStep3.ageOver30}\n")
+            #f.write(f"Figure 1: {dataVisualizationAge}\n")
+            #f.write("\n")
             f.write(f"Population served who identified as Asian: {varStep3.Asian}\n")
             f.write(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}\n")
             f.write(f"Population served who identified as Caucasian or White: {varStep3.White}\n")
@@ -273,7 +302,7 @@ while tableOfContents == True:
     elif message.upper() == 'REVIEW' or message == '5':
         reviewForm()
     elif message.upper() == 'VIZ' or message == '6':
-        dataVisualization()
+        dataVisualizationAge(), dataVisualizationRaceEthnicity(), dataVisualizationTargetPop()
     elif message.upper() == 'EXPORT' or message == '7':
         draftCSV()
     elif message.upper() == 'REPORT' or message == '8':
