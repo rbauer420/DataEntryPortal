@@ -16,7 +16,8 @@
 
   Create and call at least 3 functions, at least one of which must return a value that is used
 
-  Visualize data in a graph, chart, or other visual representation of data
+  Visualize data in a graph, chart, or other visual representation of data (using matplotlib)
+
 
 
 
