@@ -96,8 +96,6 @@
   Users will be asked to select from a multiple choice bank their overall implementation progress for the substance use prevention intervention entered in Step 1.  The choice options include, "A. No activities B. Planning activities only. C. Implementation/maintenance activities". The user should enter "A", "B", or "C", but there is no error message if another response is entered. 
 
   Users will then be asked to input yes "y" or no "n" to report if they have or have not completed the five fidelity steps of their workplan.
-  ########### "y" and "n" upper
-
 
 
 [Step 3: Population(s) Served] 
