@@ -3,15 +3,21 @@ import csv
 from matplotlib import pyplot as plt
 
 #Welcome to the program and password verification 
-print ("Welcome to the Intervention Data Reporting Portal. Please enter your password to gain access and to submit your Intervention Reporting Form:")
- 
-password = input("Enter your password:  ")
-if password == "janeDoe":
-    print ("Access Granted")
-else:
-    print("Incorrect password. Access NOT granted")
-    sys.exit() 
+print ("Welcome to the Intervention Data Reporting Portal. Please enter your username and password to gain access and to submit your Intervention Reporting Form:")
+count = 1
+while count < 4:
+    userName = input("Enter your username:  ")
+    password = input("Enter your password:  ")
 
+    if userName == "janeDoe" and password == "secret":
+        print ("Access Granted")
+        break
+    else:
+        print("Incorrect login information. You have three more chances to enter the correct password.")
+        count += 1
+    if count == 4:
+        print("Incorrect username and/or password. Access NOT granted")
+        sys.exit()
 
 # Initialize once the user enters correct user name
 askName = input("Welcome to the Data Entry Portal! Can I have your " "name:  ")

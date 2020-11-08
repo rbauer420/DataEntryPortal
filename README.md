@@ -41,13 +41,15 @@
 
 
 
-[Password Verification]
+[Login Verification]
 
-  Once the code is downloaded, the user will be welcomed to the portal and asked for the password, which is "janeDoe".  
+  Once the code is downloaded, the user will be welcomed to the portal and asked for their username and password.  
   
-  If the user enters the correct password, the program will print, "Access Granted," and will be asked to enter their name.
+  If the user enters the correct username (which is "janeDoe") and password (which is "secret"), the program will print, "Access Granted," and will be asked to enter their name.
   
-  If the user does not enter the correct password, the program will print, "Incorrect Password. Access NOT Granted," and the program will end.
+  If the user does not enter the correct username or password, the program will print, "Incorrect login information. You have three more chances to enter the correct password." 
+  
+  The user will then have three chances to enter the correct username and password.  If the conditions are not met, the program will print, ""Incorrect username and/or password. Access NOT granted", and the program will end.
   
 
 
