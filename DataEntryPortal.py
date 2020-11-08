@@ -199,10 +199,10 @@ def dataVisualizationRaceEthnicity():
 
 def dataVisualizationTargetPop():
     plt.style.use("fivethirtyeight")
-    agePlotx = ["Persons in Rural Areas", "Persons Classified as Low SES", "Students", "Veterans"]
-    agePloty = ([varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans])
+    targetPopPlotx = ["Persons in Rural Areas", "Persons Classified as Low SES", "Students", "Veterans"]
+    targetPopPloty = ([varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans])
 
-    plt.bar(agePlotx, agePloty, color="#17becf", label="Target Pop Served")
+    plt.plot(targetPopPlotx, targetPopPloty, color="#17becf", label="Target Pop Served")
     plt.legend()
     plt.title("Population Served by Target Populations")
     plt.xlabel("Target Population")
