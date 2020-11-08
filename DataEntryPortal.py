@@ -3,7 +3,7 @@ import csv
 from matplotlib import pyplot as plt
 
 #Welcome to the program and password verification 
-print ("Welcome to the Intervention Data Reporting Portal. Please enter your username and password to gain access and to submit your Intervention Reporting Form:")
+print ("Welcome to the Intervention Data Reporting Portal. Please enter your username and password to gain access and to submit your Intervention Reporting Form.")
 count = 1
 while count < 4:
     userName = input("Enter your username:  ")
@@ -187,14 +187,12 @@ def dataVisualizationAge():
 
 def dataVisualizationRaceEthnicity():
     plt.style.use("fivethirtyeight")
-    agePlotx = ["Asian", "Black/African American", "Caucasian/White", "Hispanic", "Other Race/Ethnicity"]
-    agePloty = ([varStep3.Asian, varStep3.BlackAfricanAmerican, varStep3.White, varStep3.Hispanic, varStep3.otherRaceEthnicity])
+    slices = ([varStep3.Asian, varStep3.BlackAfricanAmerican, varStep3.White, varStep3.Hispanic, varStep3.otherRaceEthnicity])
+    labels = ["Asian", "Black/African American", "Caucasian/White", "Hispanic", "Other Race/Ethnicity"]
+    colors = ['#26E3E0', '#4ACADE', '#38A6D9', '#4076D9', '#3854BD']
+    plt.pie(slices, labels=labels, colors=colors, shadow=True, autopct='%1.1f%%', wedgeprops={'edgecolor': 'black'})
 
-    plt.bar(agePlotx, agePloty, color="#1f77b4", label="Pop Served Race/Ethnicity")
-    plt.legend()
     plt.title("Population Served by Race and Ethnicity")
-    plt.xlabel("Race/Ethnicity")
-    plt.ylabel("Total Served")
     plt.tight_layout()
     plt.show()
 

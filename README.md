@@ -73,7 +73,7 @@
 
   Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. 
 
-  Once the user is done entering data, they can enter "VIZ" (not case sensitive) or 6, the program will create three bar graphs based on the data they entered for Step 3 for age, race/ethnicity and target populations served by their intervention. Users will have the option to save the graphs to whatever location they choose. 
+  Once the user is done entering data, they can enter "VIZ" (not case sensitive) or 6, the program will create three graphs based on the data they entered for Step 3. For ages of people served by the interverntion, the program will display the data in a bar graph. For race/ethnicity of people served by the interverntion, the program will display the data in a pie chart. For target populations served by their intervention, the program will display the data as a bar graph. Users will have the option to save the graphs to whatever location they choose. 
 
   After the user is done entering and reviewing their data, they have the option to export their data to a CSV file by entering "EXPORT" (not case sensitive) or 7.  This function will populate a CSV file titled, "userDataEntryPortalWorkbook.csv" with their data and headers for each of the questions they responded to. 
 
