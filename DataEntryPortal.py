@@ -108,7 +108,7 @@ class popServed:
            ageOver30 = int(input(f"12c. Please enter the total number of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
            Asian = int(input(f"13a. Please enter the total number of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
            BlackAfricanAmerican = int(input(f"13b. Please enter the total number of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           White = int(input(f"13c. Please enter the total number of people served who identified as Caucasian or White nd served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+           White = int(input(f"13c. Please enter the total number of people served who identified as Caucasian or White and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
            Hispanic = int(input(f"13d. Please enter the total number of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
            otherRaceEthnicity = int(input(f"13e. Please enter the total number of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
            popRural = int(input(f"14a. Please enter the total number of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
@@ -204,7 +204,7 @@ def dataVisualizationTargetPop():
     agePlotx = ["Persons in Rural Areas", "Persons Classified as Low SES", "Students", "Veterans"]
     agePloty = ([varStep3.popRural, varStep3.popLowSES, varStep3.popStudents, varStep3.popVeterans])
 
-    plt.bar(agePlotx, agePloty, color="#17becf", label="Pop Served Race/Ethnicity")
+    plt.bar(agePlotx, agePloty, color="#17becf", label="Target Pop Served")
     plt.legend()
     plt.title("Population Served by Target Populations")
     plt.xlabel("Target Population")
