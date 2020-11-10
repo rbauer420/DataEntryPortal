@@ -55,11 +55,11 @@
 
 [Program Menu]
 
-  After the password verification loop, users will be welcomed to the Data Entry Portal (addressed by the name entered) and the program will enter an endifinite loop named, "tableOfContents," which will repeat until the user exists the program.
+  After the password verification loop, users will be welcomed to the Data Entry Portal (addressed by the name entered) and the program will enter an indefinite loop named, "tableOfContents," which will repeat until the user exists the program.
 
   The portal is broken into four steps (programmed as classes): 
 
-      (1) Step 1 - Demograhics (date, name of agency, point of contact, county served, intervention entered)
+      (1) Step 1 - Demographics (date, name of agency, point of contact, county served, intervention entered)
       (2) Step 2 - Workplan Steps
       (3) Step 3 - Population(s) Served
       (4) Step 4 - Successes and Barriers
@@ -69,11 +69,11 @@
       (8) REPORT - Draft Report to TXT file
       (9) EXIT - Exit the program  
       
-  If a user enters "step" and a number 1 - 4 (not case sensitive) or only a number, the program will take them to the questions in that class. After the user enters data for every question in the class, the program will take them to the main menu to enter data for all 4 steps.  The users must enter data for all steps and in the order of the steps due to the global variables and functions called througout the program.  
+  If a user enters "step" and a number 1 - 4 (not case sensitive) or only a number, the program will take them to the questions in that class. After the user enters data for every question in the class, the program will take them to the main menu to enter data for all 4 steps.  The users must enter data for all steps and in the order of the steps due to the global variables and functions called throughout the program.  
 
-  Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. If the user selects this option before enterinng data for all steps (1 - 4), the program will give the error message, "You MUST enter data for Steps 1 - 4 before you can review."
+  Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. If the user selects this option before entering data for all steps (1 - 4), the program will give the error message, "You MUST enter data for Steps 1 - 4 before you can review."
 
-  Once the user is done entering data, they can enter "VIZ" (not case sensitive) or 6, the program will create three graphs based on the data they entered for Step 3. For ages of people served by the interverntion, the program will display the data in a bar graph. For race/ethnicity of people served by the interverntion, the program will display the data in a pie chart. For target populations served by their intervention, the program will display the data as a line graph. Users will have the option to save the graphs to whatever location they choose. 
+  Once the user is done entering data, they can enter "VIZ" (not case sensitive) or 6, the program will create three graphs based on the data they entered for Step 3. For ages of people served by the intervention, the program will display the data in a bar graph. For race/ethnicity of people served by the intervention, the program will display the data in a pie chart. For target populations served by their intervention, the program will display the data as a line graph. Users will have the option to save the graphs to whatever location they choose. 
 
   After the user is done entering and reviewing their data, they have the option to export their data to a CSV file by entering "EXPORT" (not case sensitive) or 7.  This function will populate a CSV file titled, "userDataEntryPortalWorkbook.csv" with their data and headers for each of the questions they responded to. 
 
@@ -81,13 +81,13 @@
 
   If the user enters "EXIT" (not case sensitive) or 9, they will be thanked for using the Data Entry Portal and the program will end.  
   
-  If the user enters anything other than the promps, the program will print, "I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
+  If the user enters anything other than the prompts, the program will print, "I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
   
 
 
 [Step 1: Demographics]  
 
-  Users will be asked to enter the date, name of their agency, name of point of contact, name of county they serve, and the name of the substance use prevention intervention implemtned in the county they serve (e.g. Strengthening Families, Too Good For Drugs. Local Capacity Building, Media Campaigns, etc.).  The name of the intervention will be imported to the print statement in Step 2 and Step 3 and the name of the county entered will be inputed in Step 4. 
+  Users will be asked to enter the date, name of their agency, name of point of contact, name of county they serve, and the name of the substance use prevention intervention implemented in the county they serve (e.g. Strengthening Families, Too Good For Drugs. Local Capacity Building, Media Campaigns, etc.).  The name of the intervention will be imported to the print statement in Step 2 and Step 3 and the name of the county entered will be inputted in Step 4. 
   
  
 
@@ -112,11 +112,11 @@ Target populations include:
     People who identify as Hispanic
     People who identify as another race or ethnicity not captured in the other categories
     People who live in rural areas 
-    People who are classified as having low socio-econmic status
+    People who are classified as having low socio-economic status
     People who are students
     People who are Veterans
 
-Inputs will be converted from string to integers. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter intergers for Step 3 before you can visualize your data," and return to the main loop. 
+Inputs will be converted from string to integers. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop. 
 
 
 [Step 4: Successes and Barriers]  
