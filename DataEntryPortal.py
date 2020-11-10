@@ -92,7 +92,7 @@ def varStep2():
 
 
 class popServed:
-    def __init__(self, ageUnder18, ageUnder30, ageOver30, Asian, BlackAfricanAmerican, White, Hispanic, otherRaceEthnicity, popRural, popLowSES, popStudents, popVeterans):
+    def __init__(self, ageUnder18, ageUnder30, ageOver30, Asian, BlackAfricanAmerican, White, Hispanic, otherRaceEthnicity, popRural, popLowSES, popStudents, popVeterans): 
         self.ageUnder18 = ageUnder18
         self.ageUnder30 = ageUnder30
         self.ageOver30 = ageOver30
@@ -109,18 +109,18 @@ class popServed:
     @classmethod
     def from_input(cls):
         return cls(
-           ageUnder18 = int(input(f"12a. Please enter the total number (as an integer) of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           ageUnder30 = int(input(f"12b. Please enter the total number (as an integer) of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           ageOver30 = int(input(f"12c. Please enter the total number (as an integer) of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           Asian = int(input(f"13a. Please enter the total number (as an integer) of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           BlackAfricanAmerican = int(input(f"13b. Please enter the total number (as an integer) of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           White = int(input(f"13c. Please enter the total number (as an integer) of people served who identified as Caucasian or White and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           Hispanic = int(input(f"13d. Please enter the total number (as an integer) of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           otherRaceEthnicity = int(input(f"13e. Please enter the total number (as an integer) of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popRural = int(input(f"14a. Please enter the total number (as an integer) of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popLowSES = int(input(f"14b. Please enter the total number (as an integer) of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popStudents = int(input(f"14c. Please enter the total number (as an integer) of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
-           popVeterans = int(input(f"14d. Please enter the total number (as an integer) of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                ageUnder18 = int(input(f"12a. Please enter the total number (as an integer) of people served who were under the age of 18 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),  
+                ageUnder30 = int(input(f"12b. Please enter the total number (as an integer) of people served who were aged 18 to 29 and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                ageOver30 = int(input(f"12c. Please enter the total number (as an integer) of people served who were 30 and older and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                Asian = int(input(f"13a. Please enter the total number (as an integer) of people served who identified as Asian and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                BlackAfricanAmerican = int(input(f"13b. Please enter the total number (as an integer) of people served who identified as Black or African American and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                White = int(input(f"13c. Please enter the total number (as an integer) of people served who identified as Caucasian or White and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                Hispanic = int(input(f"13d. Please enter the total number (as an integer) of people served who identified as Hispanic and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                otherRaceEthnicity = int(input(f"13e. Please enter the total number (as an integer) of people served who identified as another race or ethnicity not captured by other categories and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                popRural = int(input(f"14a. Please enter the total number (as an integer) of people served who lived in rural areas and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                popLowSES = int(input(f"14b. Please enter the total number (as an integer) of people served who were classified as low-socioeconomic status and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                popStudents = int(input(f"14c. Please enter the total number (as an integer) of people served who were students and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
+                popVeterans = int(input(f"14d. Please enter the total number (as an integer) of people served who were Veterans and served by the intervention {varStep1.globalInterventionEntered}:" " ")),
         )
 
 def varStep3():
@@ -264,8 +264,6 @@ def draftReport():
             f.write(f"Population served under 18: {varStep3.ageUnder18}\n")
             f.write(f"Population served bewteen 18 and 29: {varStep3.ageUnder30}\n")
             f.write(f"Population served 30 or older: {varStep3.ageOver30}\n")
-            #f.write(f"Figure 1: {plotAge.dataVisualizationAge}\n")
-            #f.write("\n")
             f.write(f"Population served who identified as Asian: {varStep3.Asian}\n")
             f.write(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}\n")
             f.write(f"Population served who identified as Caucasian or White: {varStep3.White}\n")
@@ -298,34 +296,39 @@ prompt +=  '\n8. REPORT - Draft Report to TXT file'
 prompt +=  '\n9. EXIT - Exit the program\n\t'
 
 
-#This class is an indefite loop that will repeat until the user exits the portal
+#This class is an indefinite loop that will repeat until the user exits the portal
 tableOfContents = True
 while tableOfContents == True:
     message = input(prompt)
-
-    if message.upper() == 'STEP 1' or message == '1':
-        varStep1 = demographics.from_input()
-    elif message.upper() == 'STEP 2' or message == '2':
-        varStep2 = workPlan.from_input()
-    elif message.upper() == 'STEP 3' or message == '3':
-        varStep3 = popServed.from_input()
-    elif message.upper() == 'STEP 4' or message == '4':
-        varStep4 = successBarriers.from_input()
-    elif message.upper() == 'REVIEW' or message == '5':
-        reviewForm()
-    elif message.upper() == 'VIZ' or message == '6':
-        dataVisualizationAge(), dataVisualizationRaceEthnicity(), dataVisualizationTargetPop()
-    elif message.upper() == 'EXPORT' or message == '7':
-        draftCSV()
-    elif message.upper() == 'REPORT' or message == '8':
-        draftReport()
-    elif message.upper() == 'EXIT' or message == '9':
-        print(f'Thank you {userName} for using the Data Entry Portal. Have a great day!\n')
-        menu = False
-        sys.exit() 
-    else:
-        print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
-
+    try:
+        if message.upper() == 'STEP 1' or message == '1':
+            varStep1 = demographics.from_input()
+        elif message.upper() == 'STEP 2' or message == '2':
+            varStep2 = workPlan.from_input()
+        elif message.upper() == 'STEP 3' or message == '3':
+            varStep3 = popServed.from_input()
+        elif message.upper() == 'STEP 4' or message == '4':
+            varStep4 = successBarriers.from_input()
+        elif message.upper() == 'REVIEW' or message == '5':
+            reviewForm()
+        elif message.upper() == 'VIZ' or message == '6':
+            dataVisualizationAge(), dataVisualizationRaceEthnicity(), dataVisualizationTargetPop()
+        elif message.upper() == 'EXPORT' or message == '7':
+            draftCSV()
+        elif message.upper() == 'REPORT' or message == '8':
+            draftReport()
+        elif message.upper() == 'EXIT' or message == '9':
+            print(f'Thank you {userName} for using the Data Entry Portal. Have a great day!\n')
+            menu = False
+            sys.exit() 
+        else:
+            print("I'm sorry, I do not understand. Please choose the step number you would like to enter data.")
+    except AttributeError:
+        print("You MUST enter data for Steps 1 - 4 before you can review.")
+        continue
+    except ValueError:
+        print("You MUST enter intergers for Step 3 before you can visualize your data.")
+        continue
 
  #Back burner:
         #demoTable = PrettyTable(["dateSubmitted",

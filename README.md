@@ -71,7 +71,7 @@
       
   If a user enters "step" and a number 1 - 4 (not case sensitive) or only a number, the program will take them to the questions in that class. After the user enters data for every question in the class, the program will take them to the main menu to enter data for all 4 steps.  The users must enter data for all steps and in the order of the steps due to the global variables and functions called througout the program.  
 
-  Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. 
+  Once the user is done entering data, they can enter "REVIEW" (not case sensitive) or 5, the program will print the data entered in the terminal and return to the main menu.  If edits to the data a needed, the user only needs to select which step they need to edit data and answer the questions again. If the user selects this option before enterinng data for all steps (1 - 4), the program will give the error message, "You MUST enter data for Steps 1 - 4 before you can review."
 
   Once the user is done entering data, they can enter "VIZ" (not case sensitive) or 6, the program will create three graphs based on the data they entered for Step 3. For ages of people served by the interverntion, the program will display the data in a bar graph. For race/ethnicity of people served by the interverntion, the program will display the data in a pie chart. For target populations served by their intervention, the program will display the data as a line graph. Users will have the option to save the graphs to whatever location they choose. 
 
@@ -116,7 +116,7 @@ Target populations include:
     People who are students
     People who are Veterans
 
-Inputs will be converted from string to integers. 
+Inputs will be converted from string to integers. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter intergers for Step 3 before you can visualize your data," and return to the main loop. 
 
 
 [Step 4: Successes and Barriers]  
