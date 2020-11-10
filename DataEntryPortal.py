@@ -35,12 +35,6 @@ def globalInterventionEntered():
 
 
 #Classes
-#class InputError(Exception):
-    #def __init__(self, message, errors):
-        #super(InputError, self).__init__("You must enter an integer (e.g. 100")
-        #self.errors = errors
-
-
 class demographics:
     def __init__(self, dateEntered, agencyEntered, pointOfContactEntered, globalCountyEntered, globalInterventionEntered):
         self.dateEntered = dateEntered
@@ -161,15 +155,15 @@ def reviewForm():
     print(f"Workplan Step 4 Completed: {varStep2.collectedPrePost}")
     print(f"Workplan Step 5 Completed: {varStep2.haveSharedData}")
     print(f"Population served under 18: {varStep3.ageUnder18}")
-    print(f"Population served bewteen 18 and 29: {varStep3.ageUnder30}")
+    print(f"Population served between 18 and 29: {varStep3.ageUnder30}")
     print(f"Population served 30 or older: {varStep3.ageOver30}")
     print(f"Population served who identified as Asian: {varStep3.Asian}")
     print(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}")
     print(f"Population served who identified as Caucasian or White: {varStep3.White}")
     print(f"Population served who identified as Hispanic: {varStep3.Hispanic}")
-    print(f"Population served who identified as as another race or ethnicity: {varStep3.otherRaceEthnicity}")
+    print(f"Population served who identified as another race or ethnicity: {varStep3.otherRaceEthnicity}")
     print(f"Population served who lived in rural areas: {varStep3.popRural}")
-    print(f"Population served who were classified as having low-socioeconmic status: {varStep3.popLowSES}")
+    print(f"Population served who were classified as having low-socioeconomic status: {varStep3.popLowSES}")
     print(f"Population served who were students: {varStep3.popStudents}")
     print(f"Population served who were Veterans: {varStep3.popVeterans}")
     print(f"Successes: {varStep4.successesEntered}")
@@ -262,7 +256,7 @@ def draftReport():
             f.write("Population Served:\n")
             f.write("\n")
             f.write(f"Population served under 18: {varStep3.ageUnder18}\n")
-            f.write(f"Population served bewteen 18 and 29: {varStep3.ageUnder30}\n")
+            f.write(f"Population served between 18 and 29: {varStep3.ageUnder30}\n")
             f.write(f"Population served 30 or older: {varStep3.ageOver30}\n")
             f.write(f"Population served who identified as Asian: {varStep3.Asian}\n")
             f.write(f"Population served who identified as Black or African American: {varStep3.BlackAfricanAmerican}\n")
@@ -270,7 +264,7 @@ def draftReport():
             f.write(f"Population served who identified as Hispanic: {varStep3.Hispanic}\n")
             f.write(f"Population served who identified as as another race or ethnicity: {varStep3.otherRaceEthnicity}\n")
             f.write(f"Population served who lived in rural areas: {varStep3.popRural}\n")
-            f.write(f"Population served who were classified as having low-socioeconmic status: {varStep3.popLowSES}\n")
+            f.write(f"Population served who were classified as having low-socioeconomic status: {varStep3.popLowSES}\n")
             f.write(f"Population served who were students: {varStep3.popStudents}\n")
             f.write(f"Population served who were Veterans: {varStep3.popVeterans}\n")
             f.write("\n")
@@ -327,19 +321,5 @@ while tableOfContents == True:
         print("You MUST enter data for Steps 1 - 4 before you can review.")
         continue
     except ValueError:
-        print("You MUST enter intergers for Step 3 before you can visualize your data.")
+        print("You MUST enter integers for Step 3 before you can visualize your data.")
         continue
-
- #Back burner:
-        #demoTable = PrettyTable(["dateSubmitted",
-            #                        "agencyName", 
-            #                         "pointOfContact", 
-            #                         "countyServed", 
-            #                         "interventionName"])
-            #demoTable.add_column("Date:")
-            #demoTable.add_column("Name of Agency")
-            #demoTable.add_column("Point of Contact")
-            #demoTable.add_column("County Served")
-            #demoTable.add_column("Name of Intervention")
-
-            #print(demoTable)
