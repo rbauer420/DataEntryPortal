@@ -116,7 +116,7 @@ Target populations include:
     People who are students
     People who are Veterans
 
-Inputs will be converted from string to integers. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop. 
+Inputs will be converted from string to integers. The y-axis will automatically fit to the data entered by the user. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop. 
 
 
 [Step 4: Successes and Barriers]  
