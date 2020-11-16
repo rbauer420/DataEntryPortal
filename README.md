@@ -37,7 +37,10 @@
 [Launching program]
 
   In the terminal enter:
+    Windows:
       python DataEntryPortal.py
+    Mac:
+      python3 DataEntryPortal.py
 
 
 
