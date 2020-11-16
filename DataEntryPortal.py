@@ -13,7 +13,7 @@ while count < 4:
         print ("Access Granted")
         break
     else:
-        print("Incorrect login information. You have three chances to enter the correct password.")
+        print("Incorrect login information. You have three chances to enter the correct username and password.")
         count += 1
     if count == 4:
         print("Incorrect username and/or password. Access NOT granted")
