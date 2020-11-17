@@ -18,6 +18,8 @@
 
   Visualize data in a graph, chart, or other visual representation of data (using matplotlib)
 
+  Other features: Username and password verification, use global variables to retrieve in other functions and classes, print user inputs in the terminal to review and edit inputs, and export user inputs to a CSV and formatted TXT file.
+
 
 
 
