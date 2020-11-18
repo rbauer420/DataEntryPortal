@@ -23,24 +23,27 @@
 
 
 
-[Required system imports:]
+[Required pip System Imports:]
+  Copy and paste the three pip installs listed below before launching the program:
 
-  import sys:
+    import sys:
       pip install os-sys
 
-  import csv:
+    import csv:
       pip install python-csv
-  
-  from matplotlib import pyplot as plt:
+    
+    from matplotlib import pyplot as plt:
       pip install matplotlib
 
 
 
-[Launching program]
+[Launching Program]
 
   In the terminal enter:
+
     Windows:
       python DataEntryPortal.py
+
     Mac:
       python3 DataEntryPortal.py
 
