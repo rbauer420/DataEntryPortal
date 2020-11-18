@@ -56,7 +56,7 @@
   
   If the user does not enter the correct username or password, the program will print, "Incorrect login information. You have three more chances to enter the correct password." 
   
-  The user will then have three chances to enter the correct username and password.  If the conditions are not met, the program will print, ""Incorrect username and/or password. Access NOT granted", and the program will end.
+  The user will then have three chances to enter the correct username and password.  If the conditions are not met, the program will print, "Incorrect username and/or password. Access NOT granted", and the program will end.
   
 
 
@@ -110,20 +110,20 @@
 Users will be asked to enter whole numbers of people served based on target populations for the intervention entered in Step 1.
 
 Target populations include: 
-    People under 18 years old 
-    People between 18 and 29 years old
-    People 30 or older 
-    People who identify as Asian
-    People who identify as Black or African American
-    People who identify as Caucasian or White
-    People who identify as Hispanic
-    People who identify as another race or ethnicity not captured in the other categories
-    People who live in rural areas 
-    People who are classified as having low socio-economic status
-    People who are students
-    People who are Veterans
+    <li>People under 18 years old</li> 
+    <li>People between 18 and 29 years old</li> 
+    <li>People 30 or older</li>  
+    <li>People who identify as Asian</li> 
+    <li>People who identify as Black or African American</li> 
+    <li>People who identify as Caucasian or White</li> 
+    <li>People who identify as Hispanic</li> 
+    <li>People who identify as another race or ethnicity not captured in the other categories</li> 
+    <li>People who live in rural areas</li>  
+    <li>People who are classified as having low socio-economic status</li> 
+    <li>People who are students</li> 
+    <li> People who are Veterans</li>
 
-Inputs will be converted from string to integers. The y-axis will automatically fit to the data entered by the user. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop. 
+Inputs will be converted from string to integers. The y-axis will automatically fit to the data entered by the user. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop.
 
 
 <h3>Step 4: Successes and Barriers</h3>
