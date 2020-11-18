@@ -24,7 +24,7 @@
 
 
 [Required pip System Imports:]
-  Copy and paste the three pip installs listed below before launching the program:
+  <p>Copy and paste the three pip installs listed below before launching the program:</p>
 
     import sys:
       pip install os-sys
