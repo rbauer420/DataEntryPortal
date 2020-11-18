@@ -1,4 +1,4 @@
-### Project Name: DataEntryPortal
+###### Project Name: DataEntryPortal
 
 # Program Overview
 
@@ -37,7 +37,7 @@
 
 
 
-##Launching Program
+## Launching Program
 
   In the terminal enter:
 
