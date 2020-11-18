@@ -24,7 +24,7 @@
 
 
 <h2>Required pip System Imports</h2>
-  Copy and paste the three pip installs listed below before launching the program:
+  <p>Copy and paste the three pip installs listed below before launching the program:</p>
 
     import sys:
       pip install os-sys
@@ -48,7 +48,6 @@
       python3 DataEntryPortal.py
 
 
-
 <h3>Login Verification</h3>
 
   Once the code is downloaded, the user will be welcomed to the portal and asked for their username and password.  
@@ -61,7 +60,7 @@
   
 
 
-[<h3>Program Menu</h3>
+<h3>Program Menu</h3>
 
   After the password verification loop, users will be welcomed to the Data Entry Portal (addressed by the name entered) and the program will enter an indefinite loop named, "tableOfContents," which will repeat until the user exists the program.
 
@@ -122,11 +121,11 @@ Target populations include:
     <li>People who live in rural areas</li>  
     <li>People who are classified as having low socio-economic status</li> 
     <li>People who are students</li> 
-   <li> People who are Veterans</li> 
+    <li> People who are Veterans</li>
 
-Inputs will be converted from string to integers. The y-axis will automatically fit to the data entered by the user. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop. 
+Inputs will be converted from string to integers. The y-axis will automatically fit to the data entered by the user. If the user enters data as a string rather than an integer, the program will give the error message, "You MUST enter integers for Step 3 before you can visualize your data," and return to the main loop.
 
 
-<h3>Step 4: Successes and Barriers</h3>  
+<h3>Step 4: Successes and Barriers</h3>
 
   The last two questions will allow users to describe the successes and barriers faced during the substance use prevention intervention implementation for the county they entered in Step 1 in an open-ended field.  
