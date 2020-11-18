@@ -1,12 +1,12 @@
 ###### Project Name: DataEntryPortal
 
-# Program Overview
+# [Program Overview]
 
   The purpose of this project is to allow users to report data on the progress of their substance use prevention intervention implementation as well as populations served, successes and challenges. The DataEntryProtal creates a report in a separate file for users to review which includes their responses displayed in a list or data visualization format. 
 
 
 
-# Python Project Requirements
+# [Python Project Requirements]
 
   Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
 
@@ -23,7 +23,7 @@
 
 
 
-## Required pip System Imports:
+# [Required pip System Imports]
   <p>Copy and paste the three pip installs listed below before launching the program:</p>
 
     import sys:
@@ -37,7 +37,7 @@
 
 
 
-## Launching Program
+# [Launching Program]
 
   In the terminal enter:
 
