@@ -2,7 +2,7 @@
 
 <h2>Program Overview</h2>
 
-  The purpose of this project is to allow users to report data on the progress of their substance use prevention intervention implementation as well as populations served, successes and challenges. The DataEntryProtal creates a report in a separate file for users to review which includes their responses displayed in a list or data visualization format. 
+  The purpose of this project is to allow users to report data on the progress of their substance use prevention intervention implementation as well as populations served, successes and challenges for the county they served. The DataEntryProtal creates a report in a separate text and CSV file for users to review as well as the feature to graph data for populations served by the substance use prevention intervention.  
 
 
 
